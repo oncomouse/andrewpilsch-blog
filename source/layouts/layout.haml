@@ -1,0 +1,104 @@
+!!! 5
+%html
+	%head
+		%meta{ charset:"utf-8",  }
+		%meta{ "http-equiv" => "X-UA-Compatible", content:"IE:edge;chrome:1",  }
+		%meta{ name:"viewport", content:"width:device-width, initial-scale:1", }
+
+		- page_title = "Blog Title"
+		- if (not data.blog.nil?) and data.blog.has_key? "title"
+			- page_title = data.blog.title 
+		- if(!current_page.data.nil? and current_page.data.has_key? 'title')
+			- page_title += " - " + current_page.data.title
+
+		%title= page_title + (current_article.nil? ? '' : ' - ' + current_article.title)
+		
+		- page_description = nil
+		-if current_page.data.has_key? "description"
+			- page_description = Haml::Filters::Markdown.render(current_page.data["description"])
+		-elsif defined? current_article and current_article.respond_to? :summary
+			- page_description = current_article.summary(350)
+		-if not page_description.nil?
+			- page_description = Nokogiri::HTML(page_description).text.gsub(/\'/,"\\'")
+			%meta{ :property => "description", :content => "#{page_description}" }
+		- page_image = image_path('me.png')
+		- if current_page.respond_to? :body
+			- nokogiri_img = Nokogiri::HTML(current_page.body).css('img.splash')
+			- if nokogiri_img.length > 0
+				- page_image = image_path(nokogiri_img.first.attribute "src")
+		%meta{ name: "author", content: ((not data.blog.nil?) and data.blog.has_key? "author") ? data.blog.author : "Blog Author" }
+		/ Open Graph Stuff
+		%meta{ :property => "og:url", :content => "#{config[:site_deploy_root]}#{current_page.url}" }
+		-if page_description.nil?
+			- page_description = "Andrew Pilsch's Blog"
+		%meta{ :property => "og:description", :content=> page_description }
+		%meta{ :property => "og:title", :content => ((!current_page.data.nil? and current_page.data.has_key? 'title') ? current_page.data.title : page_title).gsub(/[_*]/,"") }
+		%meta{ :property => "og:image", :content => "#{config[:site_deploy_root]}" + page_image }
+		%meta{ :property => "og:site_name", :content => data.blog.title }
+		%meta{ :property => "og:type", :content => "blog" }
+
+		/ Twitter Card Stuff
+		%meta{ :name => "twitter:card", :content => "summary_large_image" }
+		%meta{ :name => "twitter:creator", :content => "@oncomouse" }
+		%meta{ :name => "twitter:description", :content=> page_description }
+		%meta{ :name => "twitter:title", :content => page_title.gsub(/[_*]/,"") }
+		%meta{ :name => "twitter:image:src", :content => "#{config[:site_deploy_root]}" + page_image }
+		
+		= feed_tag :rss, "#{blog.options.prefix.to_s}/rss.xml", title: "RSS Feed"
+		- $features = []
+		- $features.push :site
+		- $features.push :syntax if (current_page.respond_to? "body") && Nokogiri::HTML(current_page.body).css("pre code").length > 0
+		- $features.push :modal if (current_page.respond_to? "body") && Nokogiri::HTML(current_page.body).css("img").length > 0
+		- $features.push :footnotes if (current_page.respond_to? "body") && Nokogiri::HTML(current_page.body).css("*[id^=fnref]").length > 0
+		= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Fira+Sans:400,400italic,300italic,300|Alegreya:700,900,700italic#{($features.index :syntax) ? "|Roboto+Mono:500" : ""}"
+		- if $features.index(:site)
+			- $features.delete_at($features.index(:site))
+			- $features.unshift(:site)
+		-if build?
+			= stylesheet_link_tag $features.map{|x| x.to_s}.join('.css,')
+		- else
+			= stylesheet_link_tag $features
+	%body{ class:page_classes}
+		%header
+			- blog_title = ((not data.blog.nil?) and (data.blog.has_key? "title")) ? data.blog.title.gsub(/(\w+)/) {"<span class=\"#{$1.downcase}\">#{$1}</span>"} : "Blog Title"
+			%h1= (current_page.request_path == "index.html") ? blog_title : link_to(blog_title, "/index.html")
+		#main{role:"main"}
+			- if current_article.nil?
+				= preserve yield
+			- else
+				= partial "partials/article", locals: { current_article: current_article }
+		%footer
+			#colophon
+				= partial "colophon"
+		- $javascripts = []
+		- # We only load JavaScript if the document has footnotes or images:
+		- if $features.index :footnotes
+			- $javascripts << "jquery" << "fancy-footnotes"
+		- if $features.index :modal
+			- $javascripts << "jquery" << "modal"
+		- $javascripts.uniq!
+		- if $javascripts.length > 0
+			- if $javascripts.index('jquery')
+				- $javascripts.delete_at($javascripts.index("jquery"))
+				- $javascripts.unshift("jquery")
+			- if build?
+				= javascript_include_tag $javascripts.join('.js,')
+			-else
+				= javascript_include_tag $javascripts
+-#		%aside
+-#			%h2 Recent Articles	
+-#			%ol
+-#				- blog.articles[0...10].each do |article|
+-#					%li
+-#						= link_to article.title, article
+-#						%span= article.date.strftime('%b %e')
+-#
+-#			%h2 Tags	
+-#			%ol
+-#				- blog.tags.each do |tag, articles|
+-#					%li= link_to "#{tag} (#{articles.size})", tag_path(tag)
+-#
+-#			%h2 By Year	
+-#			%ol
+-#				- blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+-#					%li= link_to "#{year} (#{articles.size})", blog_year_path(year)

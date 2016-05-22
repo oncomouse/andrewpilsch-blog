@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^stylesheets/(.*\.css) /blog/combine.php?type=css&files=$1
+RewriteRule ^javascripts/(.*\.js) /blog/combine.php?type=javascript&files=$1

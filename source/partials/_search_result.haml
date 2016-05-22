@@ -1,0 +1,11 @@
+%article{class: (defined? small) ? 'small' : nil}
+	%p.date.search
+		%span.month-day= article.date.strftime('%d %b')
+		%span.year= article.date.strftime('%Y')
+	%h1
+		- if article.data.has_key? 'short_title'
+			= link_to Tilt['markdown'].new(config[:markdown]) { article.data.short_title }.render.gsub(/<\/{0,1}p>/,""), article
+		- else
+			= link_to Tilt['markdown'].new(config[:markdown]) { article.data.title }.render.gsub(/<\/{0,1}p>/,""), article
+	-if not defined? small
+		%p= Nokogiri::HTML(article.summary(350)).css("p").first.content.to_s  + " " + link_to("Read More", article, class:"more")

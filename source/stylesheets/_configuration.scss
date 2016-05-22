@@ -1,0 +1,41 @@
+@import "bourbon/app/assets/stylesheets/bourbon";
+@import "breakpoint-sass/stylesheets/breakpoint";
+@import "normalize-scss/sass/normalize";
+@import "solarized";
+
+$column-width: 780px;
+
+$base-border-color: $base0;
+$base-border-radius: 3px;
+$base-line-height: 1.5rem;
+$base-spacing: 1.5rem;
+$action-color: $magenta;
+$dark-gray: $base02;
+$light-gray: $base2;
+$medium-screen: 40rem;
+$base-font-size: 19px;
+$base-font-color: $dark-gray;
+$background-color: $base3;
+$sans-serif: 'Fira Sans', sans-serif;
+$serif: 'Alegreya', serif;
+$mono: 'Roboto Mono', monospace;
+
+$pagination-background: transparent;
+$pagination-active-color: $background-color;
+$pagination-active-background: $base00;
+$pagination-hover-color: $light-gray;
+$pagination-hover-background: $action-color;
+$pagination-disabled-color: $base1;
+
+$footnote-border-color: $base01;
+$footnote-border-size: 3px;
+$footnote-arrow-color: $background-color;
+$leading: $base-line-height;
+$footnote-font-size: 14px;
+$footnote-width: 7rem;
+$footnote-pixel-width: (($footnote-width / 1rem) * $base-font-size);
+$max-column-width-for-sidebar: $footnote-pixel-width + $column-width + 15px;
+
+// Media queries:
+$big: (min-width $footnote-pixel-width + $max-column-width-for-sidebar);
+$footnotes: (min-width $max-column-width-for-sidebar);

@@ -1,0 +1,34 @@
+%article
+	%h1= Tilt['markdown'].new(config[:markdown]) { current_article.data.title }.render.gsub(/<\/{0,1}p>/,"").sub(/([:;]).*$/){ $1 }
+	-if current_article.respond_to? "subtitle"
+		%h2=current_article.subtitle
+	-elsif current_article.title.index(/[;:]/)
+		%h2= Tilt['markdown'].new(config[:markdown]) { current_article.data.title }.render.gsub(/<\/{0,1}p>/,"").sub(/^[^:;]*[:;]/,"")
+	-if current_article.respond_to? "date"
+		%p.date=current_article.date.strftime('%d %b %Y')
+
+	= preserve current_article.body
+
+	%hr
+	- author = "Anonymous"
+	- if data.blog.has_key? "author"
+		- author = data.blog.author
+	- if current_article.respond_to? "author"
+		- author = current_article.author
+	%p.author= author
+	- if build?
+		#comments
+			%h2 Comments
+		
+			#disqus_thread
+			:javascript
+				var disqus_shortname = 'andrewpilschblog2';
+
+				/* * * DON'T EDIT BELOW THIS LINE * * */
+				(function() {
+					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+					dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				})();
+			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>

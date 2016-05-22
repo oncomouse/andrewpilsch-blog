@@ -1,0 +1,196 @@
+$base-font-size: 19px !default;
+$base-border-radius: 3px !default;
+$base-line-height: 1.5rem !default;
+$base-spacing: 1.5rem !default;
+$action-color: #477DCA !default;
+$dark-gray: #333 !default;
+$light-gray: #DDD !default;
+$medium-screen: 40rem !default;
+$base-font-color: $dark-gray !default;
+$sans-serif: $helvetica !default;
+$serif: $georgia !default;
+$mono: $monospace !default;
+
+html {
+	font: {
+		family: $sans-serif;
+		size: $base-font-size/16px * 100%;
+		weight: 300;
+	}
+	text-align: left;
+}
+
+h1, h2, h3, p {
+	margin: 0;
+	line-height: 1;
+}
+
+hr {
+	border: {
+		bottom: 1px solid $base1;
+		left: 0;
+		right: 0;
+		top: 0;
+	}
+	margin: $base-spacing 0;
+}
+
+p {
+	color: $base-font-color;
+	line-height: $base-line-height;
+}
+
+a {
+	color: $action-color;
+	text-decoration: none;
+}
+
+.type {
+	border-bottom: 1px solid;
+	display: inline-block;
+	font: {
+		family: $sans-serif;
+		size: 0.7rem;
+		weight: 800;
+	}
+	margin-bottom: 2rem;
+	padding: 0.3rem 0;
+	text: {
+		align: left;
+		transform: uppercase;
+	}
+}
+
+h1 {
+	font: {
+		family: $serif;
+		size: 1.8rem;
+		weight: 700;
+	}
+	margin-bottom: 0.5rem;
+
+	@include breakpoint($big) {
+		font-size: 2.6rem;
+	}
+}
+
+h2 {
+	font: {
+		family: $serif;
+		size: 1.5rem;
+		//style: italic;
+		weight: 400;
+	}
+
+	@include breakpoint($big) {
+		font-size: 1.7rem;
+	}
+}
+
+pre,code {
+	font: {
+		family: $mono;
+		weight: 500;
+		size: 0.8rem;
+		style: normal;
+	}
+	color: $dark-gray;
+	border-radius: $base-border-radius * 1.5;
+	border: 1px solid $base1;
+}
+
+code {
+	background: $base2;
+	padding: 0.1rem 0.4rem;
+	white-space: nowrap;
+}
+
+pre {
+	display: block;
+	padding: 9.5px;
+	margin: 0 0 10px;
+	line-height: 1.42857143;
+	word-break: break-all;
+	word-wrap: break-word;
+	code {
+		background: transparent;
+		border: 0;
+		font-size: inherit;
+		font-style: inherit;
+		padding: 0;
+		white-space: pre;
+	}
+}
+
+h3 {
+	font: {
+		family: $serif;
+		size: 1.4rem;
+		weight: 700;
+	}
+	line-height: 1.3rem;
+	margin-bottom: 0.4rem;
+}
+
+p.date {
+	color: transparentize($base-font-color, 0.6);
+	font: {
+		family: $serif;
+		weight: 700;
+		size: 1rem;
+	}
+	margin-bottom: 0.3rem;
+}
+
+p {
+	font-family: $sans-serif;
+	line-height: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+li {
+	font-family: $sans-serif;
+	line-height: 1.5rem;
+}
+
+a.read-more {
+	display: inline-block;
+	font: {
+		family: $sans-serif;
+		size: 0.8rem;
+		weight: 700;
+	}
+	margin-left: 0.2rem;
+	position: relative;
+	text-transform: uppercase;
+
+	span {
+		font: {
+			family: $sans-serif;
+			size: 1.5rem;
+			style: normal;
+		}
+		position: absolute;
+		right: -12px;
+		top: -1px;
+	}
+}
+
+hr {
+	width: 3rem;
+}
+
+p.author {
+	font-family: $sans-serif;
+}
+
+.biggest {
+	font-size: 2rem;
+	line-height: 3rem;
+}
+p.centered, p.text-center {
+	text-align: center !important;
+}
+p.text-right {
+	text-align: right !important;
+}

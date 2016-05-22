@@ -1,0 +1,218 @@
+@charset "utf-8";
+@import "configuration";
+@import "typography";
+
+html {
+	background: $background-color;
+}
+
+::-moz-selection {
+	background: $blue;
+	color: white;
+	text-shadow: none;
+}
+
+::selection {
+	background: $blue;
+	color: white;
+	text-shadow: none;
+}
+
+body {
+	margin: 5px;
+}
+
+a {
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+strong,b {
+	font-weight: 400;
+}
+
+.text-center {
+	text-align: center;
+}
+
+aside {
+	display: none;
+}
+
+#main, header, footer {
+	width: 100%;
+	margin: 5px 0;
+}
+
+
+header {
+	margin: {
+		bottom: $base-line-height * 4;
+		top: $base-line-height ;
+	}
+	h1 {
+		line-height: 1;
+		font-weight: 900;
+		text-align: center;
+		.blog {
+			color: $action-color;
+		}
+		a {
+			color: black;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+#main {
+	img {
+		max-width: $column-width;
+		margin: 0 auto;
+		border: 0;
+		display: block;
+		&.modalized {
+			margin: auto;
+			display: inline;
+		}
+	}
+	.modal-trigger {
+		text-align: center;
+		padding: 0;
+	}
+	h1 {
+		a {
+			color: $base-font-color;
+			&:hover {
+				color: $action-color;
+			}
+		}
+		&.archive {
+			font: {
+				family: $sans-serif;
+				weight: 300;
+				size: 1.8rem;
+				style: normal;
+			}
+			margin-bottom: $base-line-height;
+			span {
+				font-weight: 400;
+			}
+		}
+		& + h2 {
+			font: {
+				family: $sans-serif;
+				size: 1.5rem;
+				//style: italic;
+				weight: 400;
+			}
+			line-height: 1.75rem;
+			margin-top: -0.5rem;
+			margin-bottom: 1.1rem;
+			margin-left: 1.5rem;
+
+			@include breakpoint($big) {
+				font-size: 1.7rem;
+			}
+		}
+	}
+	.small {
+		margin-bottom: 1.5rem;
+		p.date.search {
+			margin-top: 0rem;
+		}
+		h1 {
+			font-size: 1.8rem;
+		}
+	}
+	a.more {
+		text-transform: uppercase;
+		font-weight: 400;
+	}
+	.page-number{
+		font-size: 1.15rem;
+	}
+	pre {
+		overflow: auto;
+	}
+	.twitter-tweet {
+		margin: 10px auto;
+	}
+}
+
+footer {
+	border-top: 1px dashed $red;
+	background: $base2;
+	color: $base03;
+	font-size: 0.9rem;
+	padding: {
+		bottom: $base-line-height * 4;
+		top: $base-line-height ;
+	};
+	margin: 0;
+	p {
+		margin-bottom: 0.9 * 1.5rem;
+	}
+	a {
+		color: $blue;
+	}
+	h2 {
+		font-style: normal;
+		font-size: 1.3 * 0.9rem;
+	}
+}
+
+@import "pagination";
+
+.inline-footnote {
+	sup {
+		font: {
+			weight: 400;
+		}
+	}
+}
+
+@include breakpoint($footnotes) {
+	body {
+		margin: 0;
+	}
+	#main, #colophon {
+		width: $column-width;
+		margin-left: auto;
+		margin-right: 0;
+	}
+	footer {
+	}
+}
+@include breakpoint($big) {
+	#main, #colophon {
+		width: $column-width;
+		margin: auto;
+	}
+	blockquote {
+		margin-left: 40px;
+	}
+	p.date {
+		.month-day {
+			display: block;
+			line-height: 1;
+			margin-bottom: -9px;
+		}
+		.year {
+			font-size: 1.5em;
+			line-height: 1;
+		}
+		&.search {
+			float: left;
+			width: 10%;
+			margin-top: 0.5rem;
+			margin-left: -10%;
+		}
+		& + h1 {
+			@include clearfix;
+		}
+	}
+}

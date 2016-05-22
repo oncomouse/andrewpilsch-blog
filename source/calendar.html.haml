@@ -1,0 +1,17 @@
+---
+pageable: true
+---
+%h1.archive
+	Archive for
+	- case page_type
+		- when 'day'
+			%span= Date.new(year, month, day).strftime('%b %e %Y')
+		- when 'month'
+			%span= Date.new(year, month, 1).strftime('%b %Y')
+		- when 'year'
+			%span= year
+
+-page_articles.each_with_index do |article, i|
+	= partial "partials/search_result", locals:{article:article}
+
+= partial "partials/pagination", locals:{next_page:next_page, prev_page:prev_page, page_number:page_number}
