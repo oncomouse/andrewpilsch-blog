@@ -48,7 +48,7 @@ xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
 
       # Exclude drafts
       throw :next_page if defined?(page.data) && page.data['published'] == false
-      throw :next_page if defined?(page.data) && page.data['date'] && page.data['date'].to_time > Time.now
+      throw :next_page if defined?(page.data) && page.data['date'] && Date.parse(page.data['date']) > Time.now
 
       # Exclude archive indexes
       #     I prefer not to have the calendar archive index pages in the sitemap.
@@ -91,7 +91,7 @@ xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
             # Checks date in frontmatter and modification date of file, and uses the most recent.
             # (Note: Will not be able to get the correct date for pages with dynamic content)
             frontmatter_date = nil
-            frontmatter_date = page.data['date'].to_time.getlocal if defined?(page.data) && page.data['date']
+            frontmatter_date = Time.parse(page.data['date']).getlocal if defined?(page.data) && page.data['date']
             file_mtime = nil
             file_mtime = File.mtime(page.source_file).to_time.getlocal if defined?(page.source_file)
             most_recent = [frontmatter_date, file_mtime].compact.max if  frontmatter_date || file_mtime
