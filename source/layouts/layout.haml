@@ -35,7 +35,9 @@
 		%meta{ :property => "og:title", :content => ((!current_page.data.nil? and current_page.data.has_key? 'title') ? current_page.data.title : page_title).gsub(/[_*]/,"") }
 		%meta{ :property => "og:image", :content => "#{config[:site_deploy_root]}" + page_image }
 		%meta{ :property => "og:site_name", :content => data.blog.title }
-		%meta{ :property => "og:type", :content => "blog" }
+		%meta{ :property => "og:type", :content => "article" }
+		%meta{ :property => "article:author", :content => ((not data.blog.nil?) and data.blog.has_key? "author") ? data.blog.author : "Blog Author" }
+		%meta{ property: "article:published_time", content: (((not current_page.data.nil?) and current_page.data.has_key? "date") ? current_page.data.date : Time.now).to_datetime.strftime('%Y-%m-%dT%H:%M:%S.%L%z')}
 
 		/ Twitter Card Stuff
 		%meta{ :name => "twitter:card", :content => "summary_large_image" }
