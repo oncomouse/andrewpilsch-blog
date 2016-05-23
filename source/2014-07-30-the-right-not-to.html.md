@@ -11,7 +11,7 @@ Yesterday, [a story making the rounds](http://www.azfamily.com/news/local/Tempe-
 
 So, while sitting down to enjoy his coffee but really savor his white privilege, he took his AR-15 off of his shoulder and, in the process pointed it at someone who, as any rational being would, became scared and called the police. The act of having a deadly weapon---used in such mass shooting as [this one](http://en.wikipedia.org/wiki/2012_Aurora_shooting)---in a highly secure and sensitive place is not a crime in America but at least pointing one at someone still is ([in certain cases](http://en.wikipedia.org/wiki/Shooting_of_Trayvon_Martin)).
 
-![Looking Down the Barrel of a Gun](/images/blog/ar-15.jpg){:.splash}
+![Looking Down the Barrel of a Gun](/images/ar-15.jpg){:.splash}
 
 The doctor who gave two people the above view while they all waited to pick up loved ones is, of course, an [open carry activist](http://www.motherjones.com/politics/2014/06/guns-target-open-carry-texas), as the news article makes clear:
 
