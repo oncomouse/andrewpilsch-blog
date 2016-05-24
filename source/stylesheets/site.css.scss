@@ -19,7 +19,7 @@ html {
 }
 
 body {
-	margin: 5px;
+	margin: 0;
 }
 
 a {
@@ -46,6 +46,12 @@ aside {
 	margin: 5px 0;
 }
 
+#main, #colophon {
+	margin: {
+		left: 10px;
+		right: 10px;
+	}
+}
 
 header {
 	margin: {
@@ -176,9 +182,6 @@ footer {
 }
 
 @include breakpoint($footnotes) {
-	body {
-		margin: 0;
-	}
 	#main, #colophon {
 		width: $column-width;
 		margin-left: auto;
