@@ -12,7 +12,7 @@
 		- if(!current_page.data.nil? and current_page.data.has_key? 'title')
 			- page_title += " - " + current_page.data.title
 
-		%title= page_title + (current_article.nil? ? '' : ' - ' + current_article.title)
+		%title= page_title
 		
 		- page_description = nil
 		-if current_page.data.has_key? "description"
