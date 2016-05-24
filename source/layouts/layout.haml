@@ -23,8 +23,10 @@
 			- page_description = Nokogiri::HTML(page_description).text.gsub(/\'/,"\\'")
 			%meta{ property: "description", content: "#{page_description}" }
 		%meta{ name: "author", content: ((not data.blog.nil?) and data.blog.has_key? "author") ? data.blog.author : "Blog Author" }
+		%link{ rel: "canonical", href: "#{config[:site_deploy_root]}#{current_page.url}" }
 		
 		/ Open Graph Stuff
+		%meta{ property: "og:locale", content: "en_US" }
 		%meta{ property: "og:url", content: "#{config[:site_deploy_root]}#{current_page.url}" }
 		-if page_description.nil?
 			- page_description = "Andrew Pilsch's Blog"
@@ -33,7 +35,7 @@
 		%meta{ property: "og:site_name", content: data.blog.title }
 		%meta{ property: "og:type", content: "article" }
 		%meta{ property: "article:author", content: ((not data.blog.nil?) and data.blog.has_key? "author") ? data.blog.author : "Blog Author" }
-		%meta{ property: "article:published_time", content: (((not current_page.data.nil?) and current_page.data.has_key? "date") ? Date.parse(current_page.data.date) : Time.now).to_datetime.strftime('%Y-%m-%dT%H:%M:%S.%L%z')}
+		%meta{ property: "article:published_time", content: (((not current_page.data.nil?) and current_page.data.has_key? "date") ? DateTime.parse(current_page.data.date) : Time.now.to_datetime).strftime('%Y-%m-%dT%H:%M:%S.%L%z')}
 		- page_image = image_path('me.png')
 		- if current_page.respond_to? :body
 			- nokogiri_img = Nokogiri::HTML(current_page.body).css('img.splash')
