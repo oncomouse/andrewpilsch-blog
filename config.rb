@@ -11,7 +11,7 @@ set :markdown, :fenced_code_blocks => true,
 
 @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
 
-set :site_deploy_root, 'http://andrew.pilsch.com'
+set :site_deploy_root, 'http://andrew.pilsch.com/blog'
 
 root = Dir.pwd
 
