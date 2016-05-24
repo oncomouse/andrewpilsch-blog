@@ -16,6 +16,7 @@ gem "middleman-blog"
 gem "middleman-sprockets", ">= 4.0.0.rc.2"
 gem "middleman-syntax"
 gem 'middleman-deploy', github: 'middleman-contrib/middleman-deploy', branch: 'master'
+gem "fastimage"
 
 gem "kramdown"
 
