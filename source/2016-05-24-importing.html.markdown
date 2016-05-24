@@ -14,7 +14,7 @@ However, what is a static site to do, especially if you are blogging but not rea
 
 Enter [Open Graph](http://opengraphprotocol.org/).
 
-Developed by Facebook, the protocol is based [RDFa](https://en.wikipedia.org/wiki/RDFa). It can be read by Zotero *and* it has the advantage of controlling how your blog posts get displayed when they are shared on Facebook. As Zotero points out on their forums, Open Graph isn't the best for archival material, but it is pretty great for standard blog posts, I've found.
+Developed by Facebook, the protocol is based on [RDFa](https://en.wikipedia.org/wiki/RDFa). It can be read by Zotero *and* it has the advantage of controlling how your blog posts get displayed when they are shared on Facebook. As Zotero points out on their forums, Open Graph isn't the best for archival material, but it is pretty great for standard blog posts, I've found.
 
 Open Graph tags are HTML `<meta>` tags that go in the `<head>` of your HTML. They contain two properties, `property` and `content`. There are four required tags for any minimal Open Graph object: `og:title`, `og:type`, `og:image`, and `og:url`:
 	
