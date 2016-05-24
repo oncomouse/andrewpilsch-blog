@@ -4,7 +4,7 @@
 	%head{ prefix: "og: http://ogp.me/ns#"}
 		%meta{ charset:"utf-8",  }
 		%meta{ "http-equiv" => "X-UA-Compatible", content:"IE:edge;chrome:1",  }
-		%meta{ name:"viewport", content:"width:device-width, initial-scale:1", }
+		%meta{ name:"viewport", content:"width=device-width, initial-scale=1", }
 
 		- page_title = "Blog Title"
 		- if (not data.blog.nil?) and data.blog.has_key? "title"

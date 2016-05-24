@@ -70,7 +70,7 @@ header {
 
 #main {
 	img {
-		max-width: $column-width;
+		max-width: 100%;
 		margin: 0 auto;
 		border: 0;
 		display: block;
@@ -183,6 +183,11 @@ footer {
 		width: $column-width;
 		margin-left: auto;
 		margin-right: 0;
+	}
+	#main {
+		img {
+			max-width: $column-width;
+		}
 	}
 	footer {
 	}
