@@ -77,17 +77,17 @@
 			= stylesheet_link_tag $features.map{|x| x.to_s}.join('.css,')
 		- else
 			= stylesheet_link_tag $features
-	%body{ class:page_classes}
-		%header
+	%body{ class: page_classes}
+		%header{role: "banner"}
 			- blog_title = ((not data.blog.nil?) and (data.blog.has_key? "title")) ? data.blog.title.gsub(/(\w+)/) {"<span class=\"#{$1.downcase}\">#{$1}</span>"} : "Blog Title"
 			%h1= (current_page.request_path == "index.html") ? blog_title : link_to(blog_title, "/index.html")
-		#main{role:"main"}
+		#main{role: "main"}
 			- if current_article.nil?
 				= preserve yield
 			- else
 				= partial "partials/article", locals: { current_article: current_article }
 		%footer
-			#colophon
+			#colophon{role: "contentinfo"}
 				= partial "colophon"
 		- $javascripts = []
 		- # We only load JavaScript if the document has footnotes or images:
