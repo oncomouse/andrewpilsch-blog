@@ -79,6 +79,8 @@ configure :build do
 
 	# Minify Javascript on build
 	activate :minify_javascript, inline: true
+
+	activate :minify_html
 	
 	set :http_prefix, '/blog/'
 end
