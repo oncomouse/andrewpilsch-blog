@@ -11,11 +11,14 @@ $sans-serif: $helvetica !default;
 $serif: $georgia !default;
 $mono: $monospace !default;
 
+$base-font-weight: 400 !default;
+$bold-font-weight: 700 !default;
+
 html {
 	font: {
 		family: $sans-serif;
 		size: $base-font-size/16px * 100%;
-		weight: 300;
+		weight: $base-font-weight;
 	}
 	text-align: left;
 }
@@ -79,7 +82,7 @@ h2 {
 		family: $serif;
 		size: 1.5rem;
 		//style: italic;
-		weight: 400;
+		weight: $bold-font-weight;
 	}
 
 	@include breakpoint($big) {
