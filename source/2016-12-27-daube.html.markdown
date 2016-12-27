@@ -1,0 +1,61 @@
+---
+title: "Daube de Boeuf: The Recipe That Saved Christmas"
+date: 2016-12-27 15:47 UTC
+tags:
+---
+
+As often happens with family Christmas celebrations, someone was declared to have ruined Christmas at our house this year. Thankfully, it wasn't anyone in the family and, thankfully, we recovered from near ruination to have a great dinner. Unlike in Christmases past (for instance the...two...Christmases the tree fell down), the blame for almost ruining Christmas fell on our usually reliable local butcher.
+
+We were planning on stuffing and braising a leg of lamb and had asked them to bone the leg and cut the bone into one inch pieces. You can imagine our surprise on Christmas Eve to discover that we had a whole lamb leg bone and meat cut into one inch pieces. Mom suggested making shish kebob; I was apoplectic; [Shawna](http://www.shawnaross.com) decided to go work on an article rewrite to get out of the kitchen.
+
+What we ended up doing, instead, is adapting a **daube de boeuf** recipe I worked out earlier in the year when Shawna was teaching [*To the Lighthouse*](https://www.theguardian.com/books/little-library-cafe/2015/dec/31/food-in-books-boeuf-en-daube-from-to-the-lighthouse-by-virginia-woolf). Daube de boeuf is a braised beef dish typically from the south of France, so it has more Mediterranean flavors than the slightly more iconic Boeuf Bourguignon. I thought the orange peel and sweet spices (allspice and clove) would be appropriate given that they are Christmas flavors, as well. My recipe adds some ingredients more commonly associated with Chinese and Japanese cooking (star anise and konbu) because konbu should be in all braised meat dishes (or really anything you cook), and, according to [Heston Blumenthal](https://www.theguardian.com/lifeandstyle/2005/jun/11/foodanddrink.shopping4), star anise brings out a dish's "meatiness."
+
+On Christmas, it ended up being great with the lamb leg, though it was a bit overcooked (lamb shoulder would be the lamb cut to use here). No one noticed except me, of course, because the braising liquid and the meat comes out *so* flavorful. On the previous occasion I made this recipe, Shawna declared it "the best thing I've ever eaten" and after it was a huge hit at Christmas, she said "you should post this on your blog." So here it is:
+
+## Daube de Boeuf
+
+Braised beef with orange, spices, and red wine.
+
+### Ingredients
+
+* 4 lbs beef shanks, sliced 1" to 2" thick  
+* 2T kosher salt  
+* 1T sugar  
+* canola oil, as needed 
+* 1 onion, diced  
+* 6 shallots, thinly sliced  
+* 3 carrots, sliced thin  
+* 1 garlic head, sliced horizontal  
+* 4 parsley sprigs  
+* 4 thyme sprigs  
+* 2 bay leaves  
+* 8 thin strips of orange peel  
+* 1 tsp black pepper  
+* 8 cloves  
+* 14 allspice  
+* 4 lobes of star anise  
+* 1 4 in square of [konbu](https://en.wikipedia.org/wiki/Kombu) (you can leave this out, but you shouldn't)  
+* 2" thick slice of salt pork (or 4 slices of bacon)  
+* 1/4 cup cognac  
+* 1/8 cup tomato paste  
+* 1 750 mL red wine
+
+### Equipment
+
+* Dutch Oven (at least 4 quart)  
+* Parchment Paper  
+* Kitchen Twine
+* Mesh Strainer
+
+1. **The day before:** Combine salt and sugar. Apply to beef shanks and rest, uncovered, in the refrigerator overnight.
+2. Remove shanks and let sit at room temperature for 30 minutes. Heat oven to 350°F. Heat canola oil over medium high heat in a lidded Dutch oven. Brown shanks (in shifts if necessary). Pour off all but 1-2 Tbsp of the fat. Add the salt pork and brown if you like (probably don't brown bacon, if using). Remove the shanks to a plate and reserve.
+3. Add the cognac and deglaze, scraping up any brown beef bits as the cognac boils. When the cognac has mostly evaporated, add the onions, shallots, and carrots. Lightly salt and stir until the vegetables start to soften, around 5-10 minutes. Clear a spot in the middle of the pan and add the tomato paste. Cook undisturbed until it starts to caramelize.
+4. Meanwhile, cut a square of parchment paper 4" wider than your dutch oven. Tie the garlic, parsley, thyme, bay leaves, orange peel, black pepper, cloves, allspice, star anise, and konbu in a sachet of cheese cloth (wrap them in cheese cloth and tie with kitchen twine). When the vegetables are softened, add this sachet along with the bottle of wine and the shanks to the pot, and bring to a simmer. When simmering, cover with the parchment paper and then the lid. Add to oven. Cook 45 minutes. Stir to better situate the shanks in the liquid if necessary. Reduce heat to 285°F and cook for 3 hours.
+5. When finished, remove bones and sachet with tongs. Pick out as much of the fatty and membranous tissue as you deem necessary (I usually grab most of it, because it's gross). Remove the remaining beef to a plate. Strain the braising liquid through a mesh strainer, discard the vegetables (or eat them as a snack). The braising liquid needs to be skimmed of fat; you can pour it into a gravy separator if you have one or skim the fat off with a paper towel or spoon (let the liquid settle for a few minutes and the fat will rise to the surface). There will be about a cup of fat. Carefully break up the remaining meat into large-ish nuggets and salt to taste.
+6. Wipe out the dutch oven and return the braising liquid and meat to it. Reheat while carefully stirring before serving.
+
+### Notes
+
+* This dish is really good served over [mashed potatoes](http://www.seriouseats.com/recipes/2010/11/ultra-fluffy-mashed-potatoes-recipe.html).
+* I used to use 3 diced onions instead of one. I think it ends up too onion-y, but you may want to adapt this.
+* The carrots, onions, and shallots cook to mush in this recipe and they can end up sticking to the meat. If this bothers you (it bothers me), you might try (as I plan to) the stacked braising method suggested in Thomas Keller's [Braised Short Rib recipe in *Ad Hoc At Home*](https://books.google.com/books?id=2lrnDAAAQBAJ&printsec=frontcover&dq=ad+hoc+at+home&hl=en&sa=X&ved=0ahUKEwi97dne3pTRAhVH5iYKHXUQCuUQ6AEIHDAA#v=onepage&q=short%20rib&f=false). Basically, you put the aromatics in a layer, cover them with cheese cloth, and then put the meat on top of the cheesecloth. My only concern is that there may not be enough liquid to cover the shanks.
