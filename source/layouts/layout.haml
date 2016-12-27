@@ -69,7 +69,7 @@
 		- $features.push :syntax if (current_page.respond_to? "body") && Nokogiri::HTML(current_page.body).css("pre code").length > 0
 		- $features.push :modal if (current_page.respond_to? "body") && Nokogiri::HTML(current_page.body).css("img").length > 0
 		- $features.push :footnotes if (current_page.respond_to? "body") && Nokogiri::HTML(current_page.body).css("*[id^=fnref]").length > 0
-		= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic|Alegreya:700,900,700italic#{($features.index :syntax) ? "|Roboto+Mono:500" : ""}"
+		= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic|Alegreya:700,900,700italic#{($features.index :syntax) ? "|Roboto+Mono:500" : ""}"
 		- if $features.index(:site)
 			- $features.delete_at($features.index(:site))
 			- $features.unshift(:site)
