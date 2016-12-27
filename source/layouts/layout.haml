@@ -83,9 +83,9 @@
 			%h1= (current_page.request_path == "index.html") ? blog_title : link_to(blog_title, "/index.html")
 		#main{role: "main"}
 			- if current_article.nil?
-				= preserve yield
+				= build? ? (preserve yield).gsub("&#x000A;","") : (preserve yield)
 			- else
-				= partial "partials/article", locals: { current_article: current_article }
+				= build? ? (partial "partials/article", locals: { current_article: current_article }).gsub("&#x000A;","") : (partial "partials/article", locals: { current_article: current_article })
 		%footer
 			#colophon{role: "contentinfo"}
 				= partial "colophon"
