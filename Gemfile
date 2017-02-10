@@ -17,6 +17,7 @@ gem "middleman-sprockets", ">= 4.0.0.rc.2"
 gem "middleman-syntax"
 gem 'middleman-deploy', github: 'middleman-contrib/middleman-deploy', branch: 'master'
 gem "middleman-minify-html"
+gem "emoji_data"
 
 gem "kramdown"
 gem "nokogiri"
