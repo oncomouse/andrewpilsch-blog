@@ -1,3 +1,4 @@
+- require "emoji_data"
 - require "fastimage"
 !!! 5
 %html
@@ -69,6 +70,7 @@
 		- $features.push :syntax if (current_page.respond_to? "body") && Nokogiri::HTML(current_page.body).css("pre code").length > 0
 		- $features.push :modal if (current_page.respond_to? "body") && Nokogiri::HTML(current_page.body).css("img").length > 0
 		- $features.push :footnotes if (current_page.respond_to? "body") && Nokogiri::HTML(current_page.body).css("*[id^=fnref]").length > 0
+		- $features.push :emoji if ((current_page.respond_to? "body") && EmojiData.scan(current_page.body.to_s)) || ((current_page.respond_to? "title") && EmojiData.scan(current_page.title.to_s))
 		= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic|Alegreya:700,900,700italic#{($features.index :syntax) ? "|Roboto+Mono:500" : ""}"
 		- if $features.index(:site)
 			- $features.delete_at($features.index(:site))
@@ -95,6 +97,8 @@
 			- $javascripts << "jquery" << "fancy-footnotes"
 		- if $features.index :modal
 			- $javascripts << "jquery" << "modal"
+		- if $features.index :emoji
+			- $javascripts << "twemoji"
 		- $javascripts.uniq!
 		- if $javascripts.length > 0
 			- if $javascripts.index('jquery')
