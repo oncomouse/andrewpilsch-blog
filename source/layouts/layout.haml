@@ -107,11 +107,12 @@
 			#colophon{role: "contentinfo"}
 				= partial "colophon"
 		- # Build an array of JavaScript files to load based on requested site features:
+		- $jquery = "jquery" # We could load off a CDN someday
 		- $javascripts = []
 		- if $features.index :footnotes
-			- $javascripts << "jquery" << "fancy-footnotes"
+			- $javascripts << $jquery << "fancy-footnotes"
 		- if $features.index :modal
-			- $javascripts << "jquery" << "modal"
+			- $javascripts << $jquery << "modal"
 		- if $features.index :emoji
 			- $javascripts << "twemoji"
 		- # Make sure we don't, for instance, load jquery twice:
@@ -119,9 +120,9 @@
 		- # If we need JavaScript, we can load them:
 		- if $javascripts.length > 0
 			- # Load jQuery first, just to be sure:
-			- if $javascripts.index('jquery')
-				- $javascripts.delete_at($javascripts.index("jquery"))
-				- $javascripts.unshift("jquery")
+			- if $javascripts.index($jquery)
+				- $javascripts.delete_at($javascripts.index($jquery))
+				- $javascripts.unshift($jquery)
 			- if build?
 				- # We are using a PHP asset packer on the server end, so make sure it gets triggered:
 				= javascript_include_tag $javascripts.join('.js,')
