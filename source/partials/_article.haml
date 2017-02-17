@@ -1,9 +1,7 @@
 %article
-	%h1= Tilt['markdown'].new(config[:markdown]) { current_article.data.title }.render.gsub(/<\/{0,1}p>/,"").sub(/([:;]).*$/){ $1 }
+	%h1= Tilt['markdown'].new(config[:markdown]) { current_article.data.title }.render.gsub(/<\/{0,1}p>/,"")
 	-if current_article.respond_to? "subtitle"
 		%h2=current_article.subtitle
-	-elsif current_article.title.index(/[;:]/)
-		%h2= Tilt['markdown'].new(config[:markdown]) { current_article.data.title }.render.gsub(/<\/{0,1}p>/,"").sub(/^[^:;]*[:;]/,"")
 	-if current_article.respond_to? "date"
 		%p.date=current_article.date.strftime('%d %b %Y')
 
