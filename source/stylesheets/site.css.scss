@@ -67,7 +67,7 @@ header {
 			color: $action-color;
 		}
 		a {
-			color: black;
+			color: $dark-gray;
 			&:hover {
 				text-decoration: none;
 			}
