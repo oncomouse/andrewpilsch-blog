@@ -64,18 +64,33 @@
 		%meta{ name: "twitter:title", content: page_title.gsub(/[_*]/,"") }
 		%meta{ name: "twitter:image:src", content: (page_image.to_s =~ /^http[s]{0,1}\:/).nil? ? "#{config[:site_deploy_root]}" + page_image : page_image }
 		
+		- # Attach RSS feed:
 		= feed_tag :rss, "#{blog.options.prefix.to_s}/rss.xml", title: "RSS Feed"
+		
+		- # Feature detection!
+		- #
+		- # This is the part of this site of which I am the most proud. If possible (ie. the site is not an index page), we load Nokogiri and parse the HTML body to detect whether we need to load a particular JavaScript/CSS asset on a particular article.
+		- #
+		- # This is slow, but it doesn't matter. That's the beauty of static sites: we can do all sorts of horribly inefficient operations and it doesn't matter because the horribly inefficient operation is only performed once, at build time. Similarly, just because a site is static does not mean that we cannot do things such as dynamic asset loading at build time. The advantage is that we don't have to do this EVERY time we serve a page!
 		- $features = []
 		- $features.push :site
-		- $features.push :syntax if (current_page.respond_to? "body") && Nokogiri::HTML(current_page.body).css("pre code").length > 0
-		- $features.push :modal if (current_page.respond_to? "body") && Nokogiri::HTML(current_page.body).css("img").length > 0
-		- $features.push :footnotes if (current_page.respond_to? "body") && Nokogiri::HTML(current_page.body).css("*[id^=fnref]").length > 0
-		- $features.push :emoji if ((current_page.respond_to? "body") && EmojiData.scan(current_page.body.to_s)) || ((current_page.respond_to? "title") && EmojiData.scan(current_page.title.to_s))
+		- if (current_page.respond_to? "body")
+			- $html_body = Nokogiri::HTML(current_page.body)
+			- $features.push :syntax if $html_body.css("pre code").length > 0
+			- $features.push :modal if $html_body.css("img").length > 0
+			- $features.push :footnotes if $html_body.css("*[id^=fnref]").length > 0
+			- $features.push :emoji if (EmojiData.scan(current_page.body.to_s) || EmojiData.scan(current_page.title.to_s))
+		- else
+			- # Load all features if index page (let God sort 'em out)
+			- $features.push(:emoji, :footnotes, :modal, :syntax)
 		= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic|Alegreya:700,900,700italic#{($features.index :syntax) ? "|Roboto+Mono:500" : ""}"
+		- # Load CSS files based on features (CSS files are all named $features.css, where $feature is the particular symbol for that feature)
 		- if $features.index(:site)
+			- # Make sure that we load site.css first
 			- $features.delete_at($features.index(:site))
 			- $features.unshift(:site)
 		-if build?
+			- # We are using a PHP asset packer on the server end, so make sure it gets triggered:
 			= stylesheet_link_tag $features.map{|x| x.to_s}.join('.css,')
 		- else
 			= stylesheet_link_tag $features
@@ -91,20 +106,24 @@
 		%footer
 			#colophon{role: "contentinfo"}
 				= partial "colophon"
+		- # Build an array of JavaScript files to load based on requested site features:
 		- $javascripts = []
-		- # We only load JavaScript if the document has footnotes or images:
 		- if $features.index :footnotes
 			- $javascripts << "jquery" << "fancy-footnotes"
 		- if $features.index :modal
 			- $javascripts << "jquery" << "modal"
 		- if $features.index :emoji
 			- $javascripts << "twemoji"
+		- # Make sure we don't, for instance, load jquery twice:
 		- $javascripts.uniq!
+		- # If we need JavaScript, we can load them:
 		- if $javascripts.length > 0
+			- # Load jQuery first, just to be sure:
 			- if $javascripts.index('jquery')
 				- $javascripts.delete_at($javascripts.index("jquery"))
 				- $javascripts.unshift("jquery")
 			- if build?
+				- # We are using a PHP asset packer on the server end, so make sure it gets triggered:
 				= javascript_include_tag $javascripts.join('.js,')
 			-else
 				= javascript_include_tag $javascripts
