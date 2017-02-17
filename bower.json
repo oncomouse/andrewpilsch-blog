@@ -20,6 +20,9 @@
     "bourbon": "^4.2.7",
     "normalize-scss": "normalize.scss#^4.2.1",
     "breakpoint-sass": "^2.7.0",
-    "twemoji": "^2.2.4"
+    "twemoji": "^2.2.4",
+    "jquery-inline-footnotes": "^1.0.21",
+    "jquery-overlaps": "^1.2.3",
+    "jquery-modal": "^0.8.0"
   }
 }
