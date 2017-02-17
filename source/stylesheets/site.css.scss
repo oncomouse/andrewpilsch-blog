@@ -92,7 +92,7 @@ header {
 	}
 	h1 {
 		a {
-			@include fancyUnderline($action-color, $background-color, $action-color, $base-font-color, 84%, 2px);
+			@include fancyUnderline($action-color, $background-color, $action-color, $base-font-color, 83%, 2px);
 		}
 		&.archive {
 			font: {
