@@ -22,16 +22,22 @@ $sans-serif: 'Lato', serif; //'Fira Sans', sans-serif; // Fira+Sans:400,400itali
 $serif: 'Alegreya', serif;
 $mono: 'Roboto Mono', monospace;
 
+$base-font-weight: 400;
+$bold-font-weight: 700;
+
 $highlight-background: $light-gray;
 $highlight-color: inherit;
 
 $title-color: $dark-gray;
 
+$subtitle-font-family: $sans-serif;
+$subtitle-font-weight: $base-font-weight;
+$subtitle-font-color: $lighter-gray;
+
 $logo-color: $title-color;
 $logo-accent-color: $magenta;
 
-$base-font-weight: 400;
-$bold-font-weight: 700;
+
 
 $footer-background: $light-gray;
 $footer-color: $dark-gray;

@@ -1,7 +1,15 @@
 %article
-	%h1= Tilt['markdown'].new(config[:markdown]) { current_article.data.title }.render.gsub(/<\/{0,1}p>/,"")
+	- (title,subtitle) = current_article.data.title.split(/\:\s+/)
+	- rendered_title = Tilt['markdown'].new(config[:markdown]) { title }.render.gsub(/<\/{0,1}p>/,"")
 	-if current_article.respond_to? "subtitle"
-		%h2=current_article.subtitle
+		- subtitle = current_article.subtitle
+	- if not subtitle.nil?
+		- rendered_title += ":" if not subtitle.nil?
+		%hgroup
+			%h1=rendered_title
+			%h2=Tilt['markdown'].new(config[:markdown]) { subtitle }.render.gsub(/<\/{0,1}p>/,"")
+	- else
+		%h1=rendered_title
 	-if current_article.respond_to? "date"
 		%p.date=current_article.date.strftime('%d %b %Y')
 

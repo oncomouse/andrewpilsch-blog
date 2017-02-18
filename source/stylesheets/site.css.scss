@@ -103,13 +103,13 @@ h1.archive {
 article > h1:first-child {
 	color: $title-color;
 }
-article h1 + h2 {
+hgroup h2 {
 	font: {
-		family: $sans-serif;
+		family: $subtitle-font-family;
 		size: 1.5rem;
-		//style: italic;
-		weight: $bold-font-weight;
+		weight: $subtitle-font-weight;
 	}
+	color: $subtitle-font-color;
 	line-height: 1.75rem;
 	margin-top: -0.5rem;
 	margin-bottom: 1.1rem;
@@ -156,7 +156,9 @@ footer {
 		top: $base-spacing;
 	};
 	margin: 0;
-	p, li, blockquote {
+	p,
+	li,
+	blockquote {
 		color: $footer-color;
 		font-size: 0.9rem;
 		margin-bottom: 0.9 * 1.5rem;
@@ -170,11 +172,9 @@ footer {
 	}
 }
 @import "pagination";
-.inline-footnote {
-	sup {
-		font: {
-			weight: $bold-font-weight;
-		}
+.inline-footnote sup {
+	font: {
+		weight: $bold-font-weight;
 	}
 }
 @include breakpoint($footnotes) {
@@ -200,24 +200,22 @@ footer {
 	article.small {
 		width: $column-width * .9;
 	}
-	p.date {
-		.month-day {
-			display: block;
-			line-height: 1;
-			margin-bottom: -9px;
-		}
-		.year {
-			font-size: 1.5em;
-			line-height: 1;
-		}
-		&.search {
-			float: left;
-			width: $column-width / 10;
-			margin-top: 0.5rem;
-			margin-left: -1 * ($column-width / 10);
-		}
-		& + h1 {
-			@include clearfix;
-		}
+	p.date .month-day {
+		display: block;
+		line-height: 1;
+		margin-bottom: -9px;
+	}
+	p.date .year {
+		font-size: 1.5em;
+		line-height: 1;
+	}
+	p.date.search {
+		float: left;
+		width: $column-width / 10;
+		margin-top: 0.5rem;
+		margin-left: -1 * ($column-width / 10);
+	}
+	p.date + h1 {
+		@include clearfix;
 	}
 }
