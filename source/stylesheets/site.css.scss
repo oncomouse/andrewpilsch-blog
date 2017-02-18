@@ -100,7 +100,8 @@ h1.archive {
 		font-weight: $bold-font-weight;
 	}
 }
-article > h1:first-child, hgroup h1 {
+article > h1:first-child,
+hgroup h1 {
 	color: $title-color;
 }
 hgroup h2 {
@@ -137,7 +138,7 @@ a.more {
 	text-transform: uppercase;
 	font-weight: $bold-font-weight;
 }
-.page-number{
+.page-number {
 	font-size: 1.15rem;
 }
 article pre {
