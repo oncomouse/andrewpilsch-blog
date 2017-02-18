@@ -47,7 +47,7 @@ article,
 		right: 10px;
 	}
 }
-header {
+body > header {
 	margin: {
 		bottom: $base-spacing * 4;
 		top: $base-spacing;
@@ -146,7 +146,7 @@ article pre {
 .twitter-tweet {
 	margin: 10px auto;
 }
-footer {
+body > footer {
 	border-top: 1px dashed $footer-border-color;
 	background: $footer-background;
 	color: $footer-color;
@@ -161,6 +161,12 @@ footer {
 	blockquote {
 		color: $footer-color;
 		font-size: 0.9rem;
+	}
+	p,
+	ul,
+	ol,
+	dl,
+	blockquote {
 		margin-bottom: 0.9 * 1.5rem;
 	}
 	a {

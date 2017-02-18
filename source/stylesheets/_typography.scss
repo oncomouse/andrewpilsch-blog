@@ -43,11 +43,23 @@ blockquote {
 	color: $base-font-color;
 	line-height: $base-line-height;
 	font-size: $base-font-size * 1.15;
-	margin-bottom: $base-spacing;
+}
+p,
+ul,
+ol,
+dl,
+blockquote {
+	margin-bottom: $base-spacing / 1.5;
+}
+li {
+	padding-left: $base-spacing / 10;
 }
 a {
 	color: $action-color;
 	text-decoration: none;
+}
+blockquote footer {
+	text-align: right;
 }
 .type {
 	border-bottom: 1px solid;
@@ -110,14 +122,14 @@ pre {
 	line-height: 1.42857143;
 	word-break: break-all;
 	word-wrap: break-word;
-	code {
-		background: transparent;
-		border: 0;
-		font-size: inherit;
-		font-style: inherit;
-		padding: 0;
-		white-space: pre;
-	}
+}
+pre code {
+	background: transparent;
+	border: 0;
+	font-size: inherit;
+	font-style: inherit;
+	padding: 0;
+	white-space: pre;
 }
 h3 {
 	font: {
@@ -129,7 +141,7 @@ h3 {
 	margin-bottom: 0.4rem;
 }
 p.date {
-	color: #9BAAA2; //transparentize($base-font-color, 0.6);
+	color: $lighter-gray;
 	font: {
 		family: $serif;
 		weight: 700;
