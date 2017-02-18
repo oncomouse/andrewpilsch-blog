@@ -13,7 +13,7 @@ $base-font-color: $dark-gray !default;
 $modal-padding: 3em;
 $modal-background: $base-background-color;
 $modal-close-color: $light-gray;
-#main a.modal-trigger {
+a.modal-trigger {
 	background-image: none;
 	background-size: auto;
 }

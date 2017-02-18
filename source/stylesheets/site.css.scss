@@ -2,184 +2,174 @@
 @import "configuration";
 @import "typography";
 @import "fancyUnderline";
-
 html {
 	background: $background-color;
 }
-
 ::-moz-selection {
-	background: $blue;
-	color: white;
+	background: $highlight-background;
+	color: $highlight-color;
 	text-shadow: none;
 }
-
 ::selection {
-	background: $blue;
-	color: white;
+	background: $highlight-background;
+	color: $highlight-color;
 	text-shadow: none;
 }
-
 body {
 	margin: 0;
 }
-
 a {
 	text-decoration: none;
 	&:hover {
 		text-decoration: underline;
 	}
 }
-
-strong,b {
+strong,
+b {
 	font-weight: $bold-font-weight;
 }
-
 .text-center {
 	text-align: center;
 }
-
 aside {
 	display: none;
 }
-
-#main, header, footer {
+article,
+header,
+footer {
 	width: 100%;
 	margin: 5px 0;
 }
-
-#main, #colophon {
+article,
+#colophon {
 	margin: {
 		left: 10px;
 		right: 10px;
 	}
 }
-
 header {
 	margin: {
-		bottom: $base-line-height * 4;
-		top: $base-line-height ;
+		bottom: $base-spacing * 4;
+		top: $base-spacing;
 	}
 	h1 {
+		color: $logo-color;
 		line-height: 1;
 		font-weight: 900;
 		text-align: center;
-		.blog {
-			color: $action-color;
-		}
-		a {
-			color: $dark-gray;
-			&:hover {
-				text-decoration: none;
-			}
-		}
 	}
-}
-
-#main {
-	img {
-		max-width: 100%;
-		margin: 0 auto;
-		border: 0;
-		display: block;
-		&.modalized {
-			margin: auto;
-			display: inline;
-		}
-	}
-	.modal-trigger {
-		text-align: center;
-		padding: 0;
-	}
-	h1 {
-		a {
-			@include fancyUnderline($action-color, $background-color, $action-color, $base-font-color, 83%, 2px);
-		}
-		&.archive {
-			font: {
-				family: $sans-serif;
-				weight: $base-font-weight;
-				size: 1.8rem;
-				style: normal;
-			}
-			margin-bottom: $base-line-height;
-			span {
-				font-weight: $bold-font-weight;
-			}
-		}
-		& + h2 {
-			font: {
-				family: $sans-serif;
-				size: 1.5rem;
-				//style: italic;
-				weight: $bold-font-weight;
-			}
-			line-height: 1.75rem;
-			margin-top: -0.5rem;
-			margin-bottom: 1.1rem;
-			margin-left: 1.5rem;
-
-			@include breakpoint($big) {
-				font-size: 1.7rem;
-			}
-		}
-	}
-	.small {
-		margin-bottom: 1.5rem;
-		p.date.search {
-			margin-top: 0rem;
-		}
-		h1 {
-			font-size: 1.8rem;
-		}
+	.blog {
+		color: $logo-accent-color;
 	}
 	a {
-		@include fancyUnderline($action-color, $background-color, darken($action-color, 15%), $action-color);
-		&.footnote {
-			background: transparent;
-			&:hover {
-				background: transparent;
-			}
+		color: $logo-color;
+		&:hover {
+			text-decoration: none;
 		}
 	}
-	a.more {
-		text-transform: uppercase;
+}
+article img {
+	max-width: 100%;
+	margin: 0 auto;
+	border: 0;
+	display: block;
+}
+article a {
+	@include fancyUnderline($action-color, $background-color, darken($action-color, 15%), $action-color);
+}
+img.modalized {
+	margin: auto;
+	display: inline;
+}
+.modal-trigger {
+	text-align: center;
+	padding: 0;
+}
+article h1 a {
+	@include fancyUnderline($action-color, $background-color, $action-color, $title-color, 83%, 2px);
+}
+h1.archive {
+	font: {
+		family: $sans-serif;
+		weight: $base-font-weight;
+		size: 1.8rem;
+		style: normal;
+	}
+	margin-bottom: $base-spacing;
+	span {
 		font-weight: $bold-font-weight;
 	}
-	.page-number{
-		font-size: 1.15rem;
+}
+article > h1:first-child {
+	color: $title-color;
+}
+article h1 + h2 {
+	font: {
+		family: $sans-serif;
+		size: 1.5rem;
+		//style: italic;
+		weight: $bold-font-weight;
 	}
-	pre {
-		overflow: auto;
-	}
-	.twitter-tweet {
-		margin: 10px auto;
+	line-height: 1.75rem;
+	margin-top: -0.5rem;
+	margin-bottom: 1.1rem;
+	margin-left: 1.5rem;
+	@include breakpoint($big) {
+		font-size: 1.7rem;
 	}
 }
-
+article.small {
+	margin-bottom: 1.5rem;
+	p.date.search {
+		margin-top: 0rem;
+	}
+	h1 {
+		font-size: 1.8rem;
+	}
+}
+a.footnote {
+	background: transparent;
+	&:hover {
+		background: transparent;
+	}
+}
+a.more {
+	text-transform: uppercase;
+	font-weight: $bold-font-weight;
+}
+.page-number{
+	font-size: 1.15rem;
+}
+article pre {
+	overflow: auto;
+}
+.twitter-tweet {
+	margin: 10px auto;
+}
 footer {
-	border-top: 1px dashed $red;
-	background: $base2;
-	color: $base03;
+	border-top: 1px dashed $footer-border-color;
+	background: $footer-background;
+	color: $footer-color;
 	font-size: 0.9rem;
 	padding: {
-		bottom: $base-line-height * 4;
-		top: $base-line-height ;
+		bottom: $base-spacing * 4;
+		top: $base-spacing;
 	};
 	margin: 0;
-	p {
+	p, li, blockquote {
+		color: $footer-color;
+		font-size: 0.9rem;
 		margin-bottom: 0.9 * 1.5rem;
 	}
 	a {
-		@include fancyUnderline($blue, $base2, darken($blue, 15%), $blue);
+		@include fancyUnderline($footer-link, $footer-background, $footer-link-hover, $footer-link);
 	}
 	h2 {
 		font-style: normal;
 		font-size: 1.3 * 0.9rem;
 	}
 }
-
 @import "pagination";
-
 .inline-footnote {
 	sup {
 		font: {
@@ -187,28 +177,28 @@ footer {
 		}
 	}
 }
-
 @include breakpoint($footnotes) {
-	#main, #colophon {
+	article,
+	#colophon {
 		width: $column-width;
 		margin-left: auto;
 		margin-right: 0;
 	}
-	#main {
-		img {
-			max-width: $column-width;
-		}
-	}
-	footer {
+	article img {
+		max-width: $column-width;
 	}
 }
 @include breakpoint($big) {
-	#main, #colophon {
+	article,
+	#colophon {
 		width: $column-width;
 		margin: auto;
 	}
 	blockquote {
 		margin-left: 40px;
+	}
+	article.small {
+		width: $column-width * .9;
 	}
 	p.date {
 		.month-day {
@@ -222,9 +212,9 @@ footer {
 		}
 		&.search {
 			float: left;
-			width: 10%;
+			width: $column-width / 10;
 			margin-top: 0.5rem;
-			margin-left: -10%;
+			margin-left: -1 * ($column-width / 10);
 		}
 		& + h1 {
 			@include clearfix;

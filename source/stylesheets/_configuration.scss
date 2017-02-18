@@ -7,30 +7,46 @@ $column-width: 780px;
 
 $base-border-color: $base0;
 $base-border-radius: 3px;
-$base-line-height: 1.5rem;
-$base-spacing: 1.5rem;
+$base-line-height: 1.5;
+$base-spacing: $base-line-height * 1rem;
 $action-color: $magenta;
-$dark-gray: $base02;
+$darker-gray: $base02;
+$dark-gray: $base01;
 $light-gray: $base2;
+$lighter-gray: $base1;
 $medium-screen: 40rem;
 $base-font-size: 19px;
 $base-font-color: $dark-gray;
 $background-color: $base3;
-$sans-serif: 'Merriweather', serif; //'Fira Sans', sans-serif; // Fira+Sans:400,400italic,300italic,300|
+$sans-serif: 'Lato', serif; //'Fira Sans', sans-serif; // Fira+Sans:400,400italic,300italic,300|
 $serif: 'Alegreya', serif;
 $mono: 'Roboto Mono', monospace;
 
-$base-font-weight: 300;
-$bold-font-weight: 400;
+$highlight-background: $light-gray;
+$highlight-color: inherit;
+
+$title-color: $dark-gray;
+
+$logo-color: $title-color;
+$logo-accent-color: $magenta;
+
+$base-font-weight: 400;
+$bold-font-weight: 700;
+
+$footer-background: $light-gray;
+$footer-color: $dark-gray;
+$footer-link: $blue;
+$footer-link-hover: darken($blue, 15%);
+$footer-border-color: $red;
 
 $pagination-background: transparent;
 $pagination-active-color: $background-color;
 $pagination-active-background: $base00;
 $pagination-hover-color: $light-gray;
 $pagination-hover-background: $action-color;
-$pagination-disabled-color: $base1;
+$pagination-disabled-color: $lighter-gray;
 
-$footnote-border-color: $base01;
+$footnote-border-color: $dark-gray;
 $footnote-border-size: 3px;
 $footnote-arrow-color: $background-color;
 $leading: $base-line-height;
