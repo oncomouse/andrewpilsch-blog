@@ -30,7 +30,7 @@ p {
 }
 hr {
 	border: {
-		bottom: 1px solid $base1;
+		bottom: 1px solid $lighter-gray;
 		left: 0;
 		right: 0;
 		top: 0;
@@ -96,10 +96,10 @@ code {
 	}
 	color: $dark-gray;
 	border-radius: $base-border-radius * 1.5;
-	border: 1px solid $base1;
+	border: 1px solid $lighter-gray;
 }
 code {
-	background: $base2;
+	background: $light-gray;
 	padding: 0.1rem 0.4rem;
 	white-space: nowrap;
 }
