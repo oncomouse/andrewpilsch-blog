@@ -100,7 +100,7 @@ h1.archive {
 		font-weight: $bold-font-weight;
 	}
 }
-article > h1:first-child {
+article > h1:first-child, hgroup h1 {
 	color: $title-color;
 }
 hgroup h2 {
