@@ -2,7 +2,7 @@
 title: "\"Books & I Are Fighting\""
 date: 2017-02-17 19:25 UTC
 tags: dh, reading, rhetoric, writing
-published: false
+published: true
 ---
 *Shawna Ross challenged herself to [write a satisfying version of the "I love books" narrative](http://www.shawnaross.com/2017/02/17/literacy-narrative/) that she was tired of reading in graduate applications and undergraduate scholarship apps. On Facebook, [Eric Detweiler](http://rheteric.org/) challenged her to write an "I hate books" narrative that would still get admitted to grad school. Here's my attempt at Eric's challenge.*
 
