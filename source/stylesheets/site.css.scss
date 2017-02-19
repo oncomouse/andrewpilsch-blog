@@ -132,6 +132,9 @@ article pre {
 .twitter-tweet {
 	margin: 10px auto;
 }
+#disqus_thread {
+	margin-bottom: $base-spacing;
+}
 @import "pagination";
 .inline-footnote sup {
 	font: {
