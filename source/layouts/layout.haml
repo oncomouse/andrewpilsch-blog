@@ -79,7 +79,7 @@
 			- $features.push :syntax if $html_body.css("pre code").length > 0
 			- $features.push :modal if $html_body.css("img").length > 0
 			- $features.push :footnotes if $html_body.css("*[id^=fnref]").length > 0
-			- $features.push :emoji if (EmojiData.scan(current_page.body.to_s) || EmojiData.scan(current_page.title.to_s))
+			- $features.push :emoji if (EmojiData.scan(current_page.body.to_s).length > 0 || EmojiData.scan(current_page.title.to_s).length > 0)
 		- else
 			- # Load all features if index page (let God sort 'em out)
 			- $features.push(:emoji, :footnotes, :modal, :syntax)
