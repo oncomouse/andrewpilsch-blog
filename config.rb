@@ -11,10 +11,10 @@ set :markdown, :fenced_code_blocks => true,
 
 @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
 
-set :site_deploy_root, 'http://andrew.pilsch.com/blog'
+set :site_deploy_root, build? ? 'http://andrew.pilsch.com' : 'http://andrew.pilsch.com/blog'
 
 root = Dir.pwd
-
+activate :autoprefixer
 activate :sprockets
 sprockets.append_path File.join "#{root}", @bower_config["directory"]
 
