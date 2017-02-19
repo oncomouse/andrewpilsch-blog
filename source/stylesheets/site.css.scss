@@ -33,12 +33,14 @@ aside {
 }
 // Mobile Layout // --------------------------------------------------
 article,
+section,
 header,
 footer {
 	width: 100%;
 	margin: 5px 0;
 }
 article,
+section,
 #colophon {
 	margin: {
 		left: 10px;
@@ -122,6 +124,7 @@ a.footnote {
 a.more {
 	text-transform: uppercase;
 	font-weight: $bold-font-weight;
+	font-size: 0.9em;
 }
 .page-number {
 	font-size: 1.15rem;
@@ -195,6 +198,7 @@ body > footer {
 // Medium Desktop Layout // --------------------------------------------------
 @include breakpoint($footnotes) {
 	article,
+	section,
 	#colophon {
 		width: $column-width;
 		margin-left: auto;
@@ -207,6 +211,7 @@ body > footer {
 // Big Desktop Layout // --------------------------------------------------
 @include breakpoint($big) {
 	article,
+	section,
 	#colophon {
 		width: $column-width;
 		margin: auto;

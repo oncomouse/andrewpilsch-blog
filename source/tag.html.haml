@@ -2,9 +2,10 @@
 pageable: true
 per_page: 12
 ---
-%h1.archive 
-	Articles tagged 
-	%span= "'#{tagname}'"
+%section
+	%h1.archive 
+		Articles tagged 
+		%span= "'#{tagname}'"
 
 -page_articles.each_with_index do |article, i|
 	= partial "partials/search_result", locals:{article:article}
