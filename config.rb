@@ -30,7 +30,7 @@ activate :syntax
 activate :directory_indexes
 page "/combine.php", :directory_index => false
 activate :blog do |blog|
-	blog.tag_template = "tag.html"
+	#blog.tag_template = "tag.html"
 	blog.calendar_template = "calendar.html"
 
 	# Enable pagination
