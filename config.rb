@@ -9,29 +9,20 @@ set :markdown, :fenced_code_blocks => true,
 							 :footnotes => true,
 							 :superscript => true
 
-@bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
-
 set :site_deploy_root, build? ? 'http://andrew.pilsch.com' : 'http://andrew.pilsch.com/blog'
 
 root = Dir.pwd
-activate :sprockets
-sprockets.append_path File.join "#{root}", @bower_config["directory"]
 
-activate :autoprefixer
-#if not build?
-#	activate :external_pipeline,
-#		name: :sass,
-#		command: "npm run watch:sass",
-#		source: ".tmp",
-#		latency: 1
-#end
-#after_build do
-#	activate :external_pipeline,
-#		name: :sass,
-#		command: "npm run build:sass",
-#		source: ".tmp",
-#		latency: 1
-#end
+activate :external_pipeline,
+	name: :sass,
+	command: "npm run #{build? ? "build" : "watch"}:sass",
+	source: ".tmp",
+	latency: 1
+activate :external_pipeline,
+	name: :js,
+	command: "npm run #{build? ? "build" : "watch"}:js",
+	source: ".tmp",
+	latency: 1
 
 page '/*.xml', layout: false
 page '/*.json', layout: false
@@ -45,7 +36,6 @@ activate :syntax
 activate :directory_indexes
 page "/combine.php", :directory_index => false
 activate :blog do |blog|
-	#blog.tag_template = "tag.html"
 	blog.calendar_template = "calendar.html"
 
 	# Enable pagination
@@ -58,17 +48,8 @@ page "/rss.xml", layout: false
 
 # Build-specific configuration
 configure :build do
-	# Minify CSS on build
-	activate :minify_css, inline: true
-
-	# Minify Javascript on build
-	activate :minify_javascript, inline: true
-
 	activate :minify_html
-	
 	set :http_prefix, '/blog/'
-	
-	ignore "stylesheets/*"
 end
 
 activate :deploy do |deploy|

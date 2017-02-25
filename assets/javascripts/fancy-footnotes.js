@@ -1,5 +1,5 @@
 //=require 'jquery-overlaps/jquery.overlaps'
-//=require 'jquery-inline-footnotes'
+//=require 'jquery-inline-footnotes/dist/jquery.inline-footnotes.min'
 
 $(document).ready(function() {
 	$.inlineFootnotes({
