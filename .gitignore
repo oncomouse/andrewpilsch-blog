@@ -24,3 +24,5 @@
 Gemfile.lock
 
 /.tmp
+
+npm-debug.log*
