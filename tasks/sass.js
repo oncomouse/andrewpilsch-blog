@@ -12,6 +12,7 @@ import postcssClearfix from 'postcss-clearfix'
 import postcssEasings from 'postcss-easings'
 import cssMqpacker from 'css-mqpacker'
 import cssnano from 'cssnano'
+import laggard from 'laggard'
 
 const environment = () => {
 	let exports = {};
@@ -30,7 +31,8 @@ const environment = () => {
 			postcssEasings,
 			cssMqpacker({
 				sort: true
-			})
+			}),
+			laggard
 		]
 	}
 	exports.postcssPlugins.production = exports.postcssPlugins.development.concat([
