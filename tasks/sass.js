@@ -2,8 +2,8 @@ import fs from 'fs'
 import mkdirp from 'mkdirp'
 import path from 'path'
 import glob from 'glob'
-import watch from 'watch'
 import rimraf from 'rimraf'
+import watchWrapper from './utilities/watchWrapper'
 import bowerPath from './utilities/bowerPath'
 import sass from 'node-sass'
 import postcss from 'postcss'
@@ -77,12 +77,4 @@ const compileSass = (files=[]) => {
 	});
 }
 
-if (process.env.NODE_ENV === 'production') {
-	compileSass();
-} else {
-	compileSass()
-	watch.createMonitor(baseSourcePath, (monitor) => {
-		monitor.on('created', (f,stat) => compileSass([f]));
-		monitor.on('changed', (f,stat) => compileSass([f]));
-	})
-}
+watchWrapper(compileSass,baseSourcePath)

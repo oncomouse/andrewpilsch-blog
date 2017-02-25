@@ -5,14 +5,17 @@ import glob from 'glob'
 import rimraf from 'rimraf'
 import Mincer from 'mincer'
 import UglifyJS from 'uglify-js'
-import watch from 'watch'
+import watchWrapper from './utilities/watchWrapper'
 import bowerPath from './utilities/bowerPath'
 
 const inputDir = path.resolve(path.join('.', 'assets', 'javascripts'));
 const outputDir = path.resolve(path.join('.', '.tmp', 'javascripts'));
 
+// Set up Mincer:
 const mincerEnvironment = new Mincer.Environment();
 mincerEnvironment.appendPath(inputDir);
+mincerEnvironment.appendPath(path.resolve('node_modules'));
+// If we are using Bower, add the package directory:
 if(fs.existsSync(path.resolve(path.join('.','bower.json')))) {
 	mincerEnvironment.appendPath(bowerPath());
 }
@@ -24,21 +27,16 @@ const compileJS = (files=[]) => {
 	}
 	mkdirp.sync(outputDir);
 	jsFiles.forEach(file => {
-		const asset = mincerEnvironment.findAsset(path.basename(file));
+		// Load the asset:
+		const asset = mincerEnvironment.findAsset(file.replace(inputDir,'').replace(/^\//,''));
+		// Minify the source if in production & just load it if not:
 		const assetSource = (process.env.NODE_ENV === 'production') ? UglifyJS.minify(asset.toString(), {fromString: true}) : asset.toString();
 		const outputFile = file.replace(inputDir, outputDir);
 	
+		// Write the file:
 		fs.writeFileSync(outputFile, assetSource);
 		console.log(`Compiled ${path.basename(file)}`);
 	});
 }
 
-if (process.env.NODE_ENV === 'production') {
-	compileJS();
-} else {
-	compileJS()
-	watch.createMonitor(inputDir, (monitor) => {
-		monitor.on('created', (f,stat) => compileJS([f]));
-		monitor.on('changed', (f,stat) => compileJS([f]));
-	})
-}
+watchWrapper(compileJS,inputDir);
