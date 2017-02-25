@@ -18,7 +18,7 @@ gem "middleman-syntax"
 gem 'middleman-deploy', github: 'middleman-contrib/middleman-deploy', branch: 'master'
 gem "middleman-minify-html"
 gem "middleman-autoprefixer"
-gem "emoji_data"
+gem "emoji_data", github: 'oncomouse/emoji_data.rb', branch: 'master'
 
 gem "kramdown"
 gem "nokogiri"
