@@ -1,6 +1,6 @@
 ## About Andrew
 
-Andrew Pilsch is an assistant professor of [English](http://www.english.tamu.edu) at [Texas A&M University](http://www.tamu.edu). His research and teaching is on the digital humanities.
+Andrew Pilsch is an assistant professor of [English](http://www.english.tamu.edu) at [Texas A&M University](http://www.tamu.edu). His research and teaching is on rhetoric and the digital humanities.
 
 Learn more at [http://andrew.pilsch.com](http://andrew.pilsch.com). 
 
