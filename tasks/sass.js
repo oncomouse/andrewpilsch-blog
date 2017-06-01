@@ -13,6 +13,7 @@ import postcssEasings from 'postcss-easings'
 import cssMqpacker from 'css-mqpacker'
 import cssnano from 'cssnano'
 import laggard from 'laggard'
+import {compareFiles} from './utilities/hashAssets'
 
 const environment = () => {
 	let exports = {};
@@ -56,9 +57,15 @@ const baseSourcePath = path.resolve(defaultSetup.inputPath);
 
 const compileSass = (files=[]) => {
 	const sourceFiles = files.length === 0 ? glob.sync(`${baseSourcePath}/**/*.css.scss`) : files;
+	const hashName = 'sass';
 	
 	if(files.length === 0) {
 		rimraf.sync(`${destinationDir}/*`);
+	}
+	
+	// Check asset cache:
+	if(compareFiles(hashName, sourceFiles)) {
+		return;
 	}
 	
 	sourceFiles.forEach((file) => {

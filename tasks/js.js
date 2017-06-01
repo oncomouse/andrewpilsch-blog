@@ -7,6 +7,7 @@ import Mincer from 'mincer'
 import UglifyJS from 'uglify-js'
 import watchWrapper from './utilities/watchWrapper'
 import bowerPath from './utilities/bowerPath'
+import {compareFiles} from './utilities/hashAssets'
 
 const inputDir = path.resolve(path.join('.', 'assets', 'javascripts'));
 const outputDir = path.resolve(path.join('.', '.tmp', 'javascripts'));
@@ -22,10 +23,17 @@ if(fs.existsSync(path.resolve(path.join('.','bower.json')))) {
 
 const compileJS = (files=[]) => {
 	const jsFiles = files.length === 0 ? glob.sync(`${inputDir}/**/*.js`) : files;
+	const hashName = 'js';
 	if(files.length === 0) {
 		rimraf.sync(`${outputDir}`);
 	}
 	mkdirp.sync(outputDir);
+	
+	// Check asset cache:
+	if(compareFiles(hashName, jsFiles)) {
+		return;
+	}
+	
 	jsFiles.forEach(file => {
 		// Load the asset:
 		const asset = mincerEnvironment.findAsset(file.replace(inputDir,'').replace(/^\//,''));
