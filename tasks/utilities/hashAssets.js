@@ -31,7 +31,7 @@ Object.compare = function (obj1, obj2) {
 	return true;
 };
 
-const assetFileName = (name) => path.resolve(path.join(process.env.PWD, 'data', 'assets', `${name}.json`));
+const assetFileName = (name) => path.resolve(path.join(process.env.PWD, 'assets', 'data', `${name}.json`));
 
 const writeAssetFile = (name, hashes) => fs.writeFileSync(assetFileName(name), JSON.stringify(hashes));
 

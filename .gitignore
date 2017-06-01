@@ -28,4 +28,4 @@ Gemfile.lock
 npm-debug.log*
 
 # Ignore the asset cache files:
-/data/assets
+/assets/data
