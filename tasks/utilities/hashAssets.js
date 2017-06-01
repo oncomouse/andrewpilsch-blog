@@ -2,6 +2,7 @@ import sha1 from 'node-sha1'
 import fs from 'fs'
 import path from 'path'
 
+// Source: https://gist.github.com/nicbell/6081098
 Object.compare = function (obj1, obj2) {
 	//Loop through properties in object 1
 	for (var p in obj1) {
@@ -38,7 +39,8 @@ const hashAssets = (files) => {
 	const hashes = {};
 	files.forEach((file) => {
 		hashes[file] = sha1(fs.readFileSync(file));
-	})
+	});
+	// Cache the mode, as well, so we rebuild when switching between production and development
 	hashes['production'] = process.env.NODE_ENV === 'production'
 	return hashes;
 }
