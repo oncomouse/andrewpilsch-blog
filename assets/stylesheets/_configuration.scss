@@ -60,6 +60,10 @@ $footnote-width: 7rem;
 $footnote-pixel-width: (($footnote-width / 1rem) * $base-font-size);
 $max-column-width-for-sidebar: $footnote-pixel-width + $column-width + 15px;
 
+$code-font-family: $mono;
+$code-font-weight: 600;
+$code-font-size: 1rem;
+
 // Media queries:
 $big: (min-width $footnote-pixel-width + $max-column-width-for-sidebar);
 $footnotes: (min-width $max-column-width-for-sidebar);

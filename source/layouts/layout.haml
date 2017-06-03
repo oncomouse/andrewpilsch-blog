@@ -84,7 +84,7 @@
 		- else
 			- # Load all features if index page (let God sort 'em out)
 			- $features.push(:emoji, :footnotes, :modal, :syntax)
-		= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Alegreya:700,900,700i#{($features.index :syntax) ? "|Source+Code+Pro:500" : ""}"
+		= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Alegreya:700,900,700i#{($features.index :syntax) ? "|Source+Code+Pro:600" : ""}"
 		- # Load CSS files based on features (CSS files are all named $features.css, where $feature is the particular symbol for that feature)
 		- if $features.index(:site)
 			- # Make sure that we load site.css first
