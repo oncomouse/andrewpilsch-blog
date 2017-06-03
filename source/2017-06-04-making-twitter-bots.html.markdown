@@ -96,7 +96,9 @@ To get started with [Cheap Bots Done Quick](http://cheapbotsdonequick.com/), you
 
 ![Image of Twitter's account creation screen with the information for "Test Bot" filled in.](../../../images/bot1.png)
 
-Next, you will need to log into the account you have created. If you use a main Twitter account in your browser, consider using privacy mode (instructions for [Safari](https://support.apple.com/kb/ph21413?locale=en_US), [Chrome](https://support.google.com/chrome/answer/95464?source=gsearch&hl=en), and [Firefox](https://support.mozilla.org/en-US/kb/private-browsing-use-firefox-without-history)). Be sure not to log into [Cheap Bots Done Quick](http://cheapbotsdonequick.com/) with your main account, or your bot might start tweeting as you!
+Next, you will need to log into the account you have created. If you use a main Twitter account in your browser, consider using privacy mode (instructions for [Safari](https://support.apple.com/kb/ph21413?locale=en_US), [Chrome](https://support.google.com/chrome/answer/95464?source=gsearch&hl=en), and [Firefox](https://support.mozilla.org/en-US/kb/private-browsing-use-firefox-without-history)).
+
+**Before Going To Step 2:** Be sure not to log into [Cheap Bots Done Quick](http://cheapbotsdonequick.com/) with your main account, or your new bot might start tweeting as you!
 
 ### 2. Authorize the App
 
