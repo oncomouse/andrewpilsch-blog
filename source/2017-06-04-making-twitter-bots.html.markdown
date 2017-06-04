@@ -1,6 +1,6 @@
 ---
 title: Making Twitter Bots w/ Cheap Bots Done Quick
-date: 2017-06-04 17:05 UTC
+date: 2017-06-04 15:24 UTC
 tags:
 ---
 
@@ -16,7 +16,7 @@ I'm going to talk a little about what [Tracery](http://tracery.io/) does before 
 
 [Tracery](http://tracery.io/) is a tool to parse a particularly written grammar to generate text (and images!) using a simple set of rules. But what does that mean?
 
-Think of [Tracery](http://tracery.io/) as a programmable Mad Libs. You remember Mad Libs? Where you would fill in the blanks with, say, *a noun*, *a verb* and *an adjective*, and end up with a sentence such as "My duck smoked red mayonnaise" and hilarity would ensue? [Tracery](http://tracery.io/) works like that, substituting randomly selected values from rules you define into a text.
+Think of [Tracery](http://tracery.io/) as a programmable Mad Libs. You remember Mad Libs? Where you would fill in the blanks with, say, *a noun*, *a verb* and *an adjective*, and end up with a sentence such as "My duck smoked red mayonnaise" and hilarity would ensue? [Tracery](http://tracery.io/) works like that, substituting randomly selected values from rules you define into a predefined template.
 
 This is different from Zach's approach, which uses either a Markov chain algorithm to generate sentences based on a corpus or to choose pre-composed sentences from a list in a spreadsheet.
 
