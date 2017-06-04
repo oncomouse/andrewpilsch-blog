@@ -13,6 +13,8 @@ set :site_deploy_root, build? ? 'http://andrew.pilsch.com' : 'http://andrew.pils
 
 root = Dir.pwd
 
+set :haml, { :ugly => true, :format => :html5, preserve: ['textarea', 'pre', 'code']}
+
 activate :external_pipeline,
 	name: :sass,
 	command: "npm run #{build? ? "build" : "watch"}:sass",
@@ -48,7 +50,9 @@ page "/rss.xml", layout: false
 
 # Build-specific configuration
 configure :build do
-	activate :minify_html
+	activate :minify_html do |html|
+		html.preserve_patterns = [/<pre\s?(.*?)>(.*?)<\/pre>/im, /<textarea\s?(.*?)>(.*?)<\/textarea>/im]
+	end
 	set :http_prefix, '/blog/'
 end
 

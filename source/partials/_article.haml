@@ -13,7 +13,7 @@
 	-if current_article.respond_to? "date"
 		%p.date=current_article.date.strftime('%d %b %Y')
 
-	= preserve current_article.body
+	= current_article.body
 
 	%hr
 	- author = "Anonymous"
