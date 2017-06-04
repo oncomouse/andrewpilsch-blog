@@ -18,7 +18,7 @@ I'm going to talk a little about what [Tracery](http://tracery.io/) does before 
 
 Think of [Tracery](http://tracery.io/) as a programmable Mad Libs. You remember Mad Libs? Where you would fill in the blanks with, say, *a noun*, *a verb* and *an adjective*, and end up with a sentence such as "My duck smoked red mayonnaise" and hilarity would ensue? [Tracery](http://tracery.io/) works like that, substituting randomly selected values from rules you define into a predefined template.
 
-This is different from Zach's approach, which uses either a Markov chain algorithm to generate sentences based on a corpus or to choose pre-composed sentences from a list in a spreadsheet.
+This is different from Zach's approach, which uses either a Markov chain algorithm to generate sentences based on a corpus or chooses pre-composed sentences from a list in a spreadsheet.
 
 Let me give you an example.
 
@@ -26,7 +26,7 @@ Let me give you an example.
 
 Tracery grammars are written in a file format known as [JSON](http://www.json.org/) (JavaScript Object Notation), which is a simple way to transport JavaScript data between processes (and humans) on the web. A [Tracery](http://tracery.io/) grammar is a JSON data structure known as a hash. A hash is a data structure that associates a particular key with a particular value. In a hash, if I had a value `foobar` associated with the key `a`, when I asked for `a` from the hash (`hash['a']` in JavaScript), the hash would give me `foobar` as the value.
 
-Tracery has one specifically defined key/value pair in its grammar: the key `origin` is the start of the generation sequence. So a *very* simple [Tracery](http://tracery.io/) grammar would look like this:
+Tracery requires one key/value pair defined in any grammar: the key `origin` is the start of the generation sequence. So a *very* simple [Tracery](http://tracery.io/) grammar would look like this:
 
 ~~~json
 {
