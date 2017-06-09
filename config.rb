@@ -16,13 +16,8 @@ root = Dir.pwd
 set :haml, { :ugly => true, :format => :html5, preserve: ['textarea', 'pre', 'code']}
 
 activate :external_pipeline,
-	name: :sass,
-	command: "npm run #{build? ? "build" : "watch"}:sass",
-	source: ".tmp",
-	latency: 1
-activate :external_pipeline,
-	name: :js,
-	command: "npm run #{build? ? "build" : "watch"}:js",
+	name: :gulp,
+	command: build? ? "env NODE_ENV=production gulp build" : "gulp default",
 	source: ".tmp",
 	latency: 1
 

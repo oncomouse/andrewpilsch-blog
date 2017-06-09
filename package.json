@@ -4,13 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "babel-node ./tasks/sass.js",
-    "build:sass": "env NODE_ENV=production npm run sass",
-    "watch:sass": "npm run sass",
-    "js": "babel-node ./tasks/js.js",
-    "build:js": "env NODE_ENV=production npm run js",
-    "watch:js": "npm run js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -32,16 +26,20 @@
     "bower": "^1.8.0",
     "css-mqpacker": "^5.0.1",
     "cssnano": "^3.10.0",
-    "glob": "^7.1.1",
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-mincer": "0.0.2",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
     "laggard": "^0.1.0",
     "mincer": "^1.5.0",
-    "node-sass": "^4.5.0",
-    "node-sha1": "^1.0.1",
+    "node-sass": "^4.5.3",
     "postcss": "^5.2.15",
     "postcss-clearfix": "^1.0.0",
-    "postcss-easings": "^0.3.0",
-    "rimraf": "^2.6.1",
-    "uglify-js": "^2.7.5",
-    "watch": "^1.0.2"
+    "postcss-easings": "^0.3.0"
   }
 }
