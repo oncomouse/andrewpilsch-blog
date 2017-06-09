@@ -9,7 +9,7 @@ set :markdown, :fenced_code_blocks => true,
 							 :footnotes => true,
 							 :superscript => true
 
-set :site_deploy_root, build? ? 'http://andrew.pilsch.com' : 'http://andrew.pilsch.com/blog'
+set :site_deploy_root, build? ? 'https://andrew.pilsch.com' : 'https://andrew.pilsch.com/blog'
 
 root = Dir.pwd
 
