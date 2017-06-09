@@ -35,8 +35,12 @@ export default (gulp, plugins) => {
 		postCssPlugins.push(cssnano);
 	}
 	return () => gulp.src(path.join(inputDir, '**', '*.scss'))
+	// Compile SASS files:
 	.pipe(plugins.sass({includePaths: sassIncludePaths}))
+	// Run PostCSS:
 	.pipe(plugins.postcss(postCssPlugins))
+	// Rename our .css.scss files to .css files:
 	.pipe(plugins.rename(path => path.basename = path.basename.replace(/\.css$/,'')))
+	// Write to destination:
 	.pipe(gulp.dest(outputDir));
 }

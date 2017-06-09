@@ -17,7 +17,10 @@ if(fs.existsSync(path.resolve(path.join('.','bower.json')))) {
 
 export default (gulp, plugins) => {
 	return () => gulp.src(path.join(inputDir, '**', '*.js'))
+	// Run Mincer:
 	.pipe(plugins.mincer(mincerEnvironment))
+	// If in production, run Uglify:
 	.pipe(plugins.util.env.node_env === 'production' ? plugins.uglify() : plugins.util.noop())
+	// Write files to destination:
 	.pipe(gulp.dest(outputDir));
 }
