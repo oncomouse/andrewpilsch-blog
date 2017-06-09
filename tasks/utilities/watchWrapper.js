@@ -8,6 +8,7 @@ export default (func,dir) => {
 		watch.createMonitor(dir, (monitor) => {
 			monitor.on('created', (f,stat) => func([f]));
 			monitor.on('changed', (f,stat) => func([f]));
+			monitor.on('removed', (f,stat) => func([f]));
 		})
 	}
 }
