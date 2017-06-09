@@ -17,7 +17,7 @@ set :haml, { :ugly => true, :format => :html5, preserve: ['textarea', 'pre', 'co
 
 activate :external_pipeline,
 	name: :gulp,
-	command: build? ? "env NODE_ENV=production gulp build" : "gulp default",
+	command: build? ? "gulp --node_env=production build" : "gulp default",
 	source: ".tmp",
 	latency: 1
 

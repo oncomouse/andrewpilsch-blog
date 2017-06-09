@@ -28,11 +28,12 @@ const postCssPlugins = [
 	}),
 	laggard
 ];
-if(process.env.NODE_ENV === 'production') {
-	postCssPlugins.push(cssnano);
-}
 
 export default (gulp, plugins) => {
+	// Add cssnano in production
+	if(plugins.util.env.node_env === 'production' && !postCssPlugins.includes(cssnano)) {
+		postCssPlugins.push(cssnano);
+	}
 	return () => gulp.src(path.join(inputDir, '**', '*.scss'))
 	.pipe(plugins.sass({includePaths: sassIncludePaths}))
 	.pipe(plugins.postcss(postCssPlugins))

@@ -18,6 +18,6 @@ if(fs.existsSync(path.resolve(path.join('.','bower.json')))) {
 export default (gulp, plugins) => {
 	return () => gulp.src(path.join(inputDir, '**', '*.js'))
 	.pipe(plugins.mincer(mincerEnvironment))
-	.pipe(process.env.NODE_ENV === 'production' ? plugins.uglify() : plugins.util.noop())
+	.pipe(plugins.util.env.node_env === 'production' ? plugins.uglify() : plugins.util.noop())
 	.pipe(gulp.dest(outputDir));
 }
