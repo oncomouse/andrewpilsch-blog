@@ -94,7 +94,7 @@ Making a cool [Tracery](http://tracery.io/) grammar for your bot can take some t
 
 To get started with [Cheap Bots Done Quick](http://cheapbotsdonequick.com/), you will first need to create a Twitter account for your bot:
 
-![Image of Twitter's account creation screen with the information for "Test Bot" filled in.](../../../images/bot1.png)
+![Image of Twitter's account creation screen with the information for "Test Bot" filled in.](bot1.png)
 
 Next, you will need to log into the account you have created. If you use a main Twitter account in your browser, consider using privacy mode (instructions for [Safari](https://support.apple.com/kb/ph21413?locale=en_US), [Chrome](https://support.google.com/chrome/answer/95464?source=gsearch&hl=en), and [Firefox](https://support.mozilla.org/en-US/kb/private-browsing-use-firefox-without-history)).
 
@@ -104,7 +104,7 @@ Next, you will need to log into the account you have created. If you use a main 
 
 Now that you are logged into your new bot's Twitter account, go to [Cheap Bots Done Quick](http://cheapbotsdonequick.com/) and click "Sign In With Twitter". You will be taken to a screen like the one below:
 
-![Image showing the screen Twitter uses to ask if you authorize the app to use your account](../../../images/bot2.png)
+![Image showing the screen Twitter uses to ask if you authorize the app to use your account](bot2.png)
 
 Click "Authorize App" to continue.
 
