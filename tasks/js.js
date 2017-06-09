@@ -7,7 +7,7 @@ import Mincer from 'mincer'
 import UglifyJS from 'uglify-js'
 import watchWrapper from './utilities/watchWrapper'
 import bowerPath from './utilities/bowerPath'
-import {compareFiles} from './utilities/hashAssets'
+//import {compareFiles} from './utilities/hashAssets'
 
 const inputDir = path.resolve(path.join('.', 'assets', 'javascripts'));
 const outputDir = path.resolve(path.join('.', '.tmp', 'javascripts'));

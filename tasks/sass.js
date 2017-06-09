@@ -13,7 +13,7 @@ import postcssEasings from 'postcss-easings'
 import cssMqpacker from 'css-mqpacker'
 import cssnano from 'cssnano'
 import laggard from 'laggard'
-import {compareFiles} from './utilities/hashAssets'
+//import {compareFiles} from './utilities/hashAssets'
 
 const environment = () => {
 	let exports = {};
