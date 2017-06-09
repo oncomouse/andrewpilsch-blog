@@ -12,6 +12,8 @@ import {compareFiles} from './utilities/hashAssets'
 const inputDir = path.resolve(path.join('.', 'assets', 'javascripts'));
 const outputDir = path.resolve(path.join('.', '.tmp', 'javascripts'));
 
+const outputPath = (file) => file.replace(inputDir, outputDir);
+
 // Set up Mincer:
 const mincerEnvironment = new Mincer.Environment();
 mincerEnvironment.appendPath(inputDir);
@@ -30,16 +32,17 @@ const compileJS = (files=[]) => {
 	mkdirp.sync(outputDir);
 	
 	// Check asset cache:
-	if(compareFiles(hashName, jsFiles)) {
-		return;
-	}
+	//const outputFiles = jsFiles.map(f => outputPath(f));
+	//if(compareFiles(hashName, jsFiles.concat(outputFiles))) {
+	//	return;
+	//}
 	
 	jsFiles.forEach(file => {
 		// Load the asset:
 		const asset = mincerEnvironment.findAsset(file.replace(inputDir,'').replace(/^\//,''));
 		// Minify the source if in production & just load it if not:
-		const assetSource = (process.env.NODE_ENV === 'production') ? UglifyJS.minify(asset.toString(), {fromString: true}) : asset.toString();
-		const outputFile = file.replace(inputDir, outputDir);
+		const assetSource = (process.env.NODE_ENV === 'production') ? UglifyJS.minify(asset.toString(), {fromString: true}).code : asset.toString();
+		const outputFile = outputPath(file);
 	
 		// Write the file:
 		fs.writeFileSync(outputFile, assetSource);
