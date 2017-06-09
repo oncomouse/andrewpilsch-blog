@@ -23,7 +23,7 @@ gem "emoji_data", github: 'oncomouse/emoji_data.rb', branch: 'master'
 gem "kramdown"
 gem "nokogiri"
 
-gem "haml", "=4.0.7"
+#gem "haml", "=4.0.7"
 
 # For image dimensions
 gem "fastimage"

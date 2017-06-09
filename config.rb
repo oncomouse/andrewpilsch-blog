@@ -14,6 +14,7 @@ set :site_deploy_root, build? ? 'https://andrew.pilsch.com' : 'https://andrew.pi
 root = Dir.pwd
 
 set :haml, { :format => :html5, preserve: ['textarea', 'pre', 'code']}
+Haml::TempleEngine.disable_option_validator!
 
 activate :external_pipeline,
 	name: :gulp,
