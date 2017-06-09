@@ -55,6 +55,8 @@ if(fs.existsSync(path.resolve('./bower.json'))) {
 const destinationDir = process.env.NODE_ENV === 'production' ? path.resolve(defaultSetup.outputPath.production) : path.resolve(defaultSetup.outputPath.development);
 const baseSourcePath = path.resolve(defaultSetup.inputPath);
 
+const outputPath = (file) => file.replace(baseSourcePath, destinationDir).replace(/\.css\.scss$/, '.css');
+
 const compileSass = (files=[]) => {
 	const sourceFiles = files.length === 0 ? glob.sync(`${baseSourcePath}/**/*.css.scss`) : files;
 	const hashName = 'sass';
@@ -63,13 +65,18 @@ const compileSass = (files=[]) => {
 		rimraf.sync(`${destinationDir}/*`);
 	}
 	
+	//const outputFiles = sourceFiles.map(f => outputPath(f));
+	//if(compareFiles(hashName, sourceFiles.concat(outputFiles))) {
+	//	return;
+	//}
+	
 	// Check asset cache:
-	if(compareFiles(hashName, sourceFiles)) {
-		return;
-	}
+	//if(compareFiles(hashName, sourceFiles)) {
+	//	return;
+	//}
 	
 	sourceFiles.forEach((file) => {
-		const outputFile = file.replace(baseSourcePath, destinationDir).replace(/\.css\.scss$/, '.css');
+		const outputFile = outputPath(file);
 		mkdirp.sync(path.dirname(outputFile));
 		let result = sass.render({
 	        file: file,

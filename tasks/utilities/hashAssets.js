@@ -35,10 +35,12 @@ const assetFileName = (name) => path.resolve(path.join(process.env.PWD, 'assets'
 
 const writeAssetFile = (name, hashes) => fs.writeFileSync(assetFileName(name), JSON.stringify(hashes));
 
+export const hashFile = (file) => !fs.existsSync(file) ? undefined : sha1(fs.readFileSync(file));
+
 const hashAssets = (files) => {
 	const hashes = {};
 	files.forEach((file) => {
-		hashes[file] = sha1(fs.readFileSync(file));
+		hashes[file] = hashFile(file);
 	});
 	// Cache the mode, as well, so we rebuild when switching between production and development
 	hashes['production'] = process.env.NODE_ENV === 'production'
