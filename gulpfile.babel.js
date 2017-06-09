@@ -5,8 +5,10 @@ import path from 'path'
 import gulpjs from './tasks/js'
 import gulpsass from './tasks/sass'
 
-const plugins = gulpLoadPlugins()
+// Load all the Gulp plugins in package.json:
+const plugins = gulpLoadPlugins();
 
+// Rewrite gulp.src to catch errors:
 const gulp_src = gulp.src;
 gulp.src = function() {
 	return gulp_src.apply(gulp, arguments)
@@ -17,12 +19,15 @@ gulp.src = function() {
 	}))
 }
 
+// Load up our two imported tasks:
 gulp.task('js', gulpjs(gulp, plugins));
 gulp.task('sass', gulpsass(gulp, plugins));
 
+// Default task:
 gulp.task('default', ['js', 'sass'], () => {
-	gulp.watch(path.resolve(path.join('.', 'assets', 'javascripts', '**', '*.js')), ['js']);
-	gulp.watch(path.resolve(path.join('.', 'assets', 'stylesheets', '**', '*.scss')), ['sass']);
+	// If not in production, load watchers:
+	if(plugins.util.env.node_env !== 'production') {
+		gulp.watch(path.resolve(path.join('.', 'assets', 'javascripts', '**', '*.js')), ['js']);
+		gulp.watch(path.resolve(path.join('.', 'assets', 'stylesheets', '**', '*.scss')), ['sass']);
+	}
 });
-
-gulp.task('build', ['js', 'sass']);
