@@ -65,10 +65,12 @@ const compileSass = (files=[]) => {
 		rimraf.sync(`${destinationDir}/*`);
 	}
 	
+	
 	//let cacheFresh = true;
 	//const outputFiles = sourceFiles.map(f => outputPath(f));
 	//outputFiles.forEach(file => {
 	//	if(!fs.existsSync(file)) {
+	//		console.log(`${file} does not exist.`)
 	//		cacheFresh = false;
 	//	}
 	//});

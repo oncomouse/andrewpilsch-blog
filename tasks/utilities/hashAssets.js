@@ -58,7 +58,25 @@ export const compareFiles = (name, files) => {
 	}
 	
 	const cachedHashes = JSON.parse(fs.readFileSync(fileName).toString());
-	const noChange = Object.compare(cachedHashes, hashes);
+	//const noChange = Object.compare(cachedHashes, hashes);
+	let noChange = true;
+	Object.keys(cachedHashes).forEach(key => {
+		if(!hashes.hasOwnProperty(key)) {
+			console.log(`Current hash is missing ${key}.`)
+			noChange = false;
+		} else if(hashes[key] !== cachedHashes[key]){
+			console.log(`Hash does not match cache for ${key}.`)
+			noChange = false;
+		}
+	})
+	if(noChange) {
+		Object.keys(hashes).forEach(key => {
+			if(!cachedHashes.hasOwnProperty(key)) {
+				console.log(`Cache is missing ${key}.`)
+				noChange = false;
+			}
+		})
+	}
 	
 	if(!noChange) {
 		writeAssetFile(name, hashes);

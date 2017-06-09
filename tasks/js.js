@@ -41,7 +41,6 @@ const compileJS = (files=[]) => {
 	//	}
 	//});
 	//if(!compareFiles(hashName, jsFiles)) {
-	//	console.log('compareFiles returned false');
 	//	cacheFresh = false;
 	//}
 	//if(cacheFresh) {
