@@ -1,3 +1,7 @@
+# NOKOGIRI WITH HOMEBREW:
+#bundle config build.nokogiri --use-system-libraries \
+#  --with-xml2-include=$(brew --prefix libxml2)/include/libxml2
+
 # If you do not have OpenSSL installed, change
 # the following line to use 'http://'
 source 'https://rubygems.org'
