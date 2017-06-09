@@ -65,13 +65,17 @@ const compileSass = (files=[]) => {
 		rimraf.sync(`${destinationDir}/*`);
 	}
 	
+	//let cacheFresh = true;
 	//const outputFiles = sourceFiles.map(f => outputPath(f));
-	//if(compareFiles(hashName, sourceFiles.concat(outputFiles))) {
-	//	return;
+	//outputFiles.forEach(file => {
+	//	if(!fs.existsSync(file)) {
+	//		cacheFresh = false;
+	//	}
+	//});
+	//if(!compareFiles(hashName, sourceFiles)) {
+	//	cacheFresh = false;
 	//}
-	
-	// Check asset cache:
-	//if(compareFiles(hashName, sourceFiles)) {
+	//if(cacheFresh) {
 	//	return;
 	//}
 	

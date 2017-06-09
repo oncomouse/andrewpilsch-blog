@@ -32,8 +32,19 @@ const compileJS = (files=[]) => {
 	mkdirp.sync(outputDir);
 	
 	// Check asset cache:
-	//const outputFiles = jsFiles.map(f => outputPath(f));
-	//if(compareFiles(hashName, jsFiles.concat(outputFiles))) {
+	//let cacheFresh = true;
+	//const outputFiles = jsFiles.map(f => outputPath(f));	
+	//outputFiles.forEach(file => {
+	//	if(!fs.existsSync(file)) {
+	//		console.log(`${file} does not exist.`)
+	//		cacheFresh = false;
+	//	}
+	//});
+	//if(!compareFiles(hashName, jsFiles)) {
+	//	console.log('compareFiles returned false');
+	//	cacheFresh = false;
+	//}
+	//if(cacheFresh) {
 	//	return;
 	//}
 	
