@@ -13,7 +13,7 @@ set :site_deploy_root, build? ? 'https://andrew.pilsch.com' : 'https://andrew.pi
 
 root = Dir.pwd
 
-set :haml, { :ugly => true, :format => :html5, preserve: ['textarea', 'pre', 'code']}
+set :haml, { :format => :html5, preserve: ['textarea', 'pre', 'code']}
 
 activate :external_pipeline,
 	name: :gulp,
