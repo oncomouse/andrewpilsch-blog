@@ -8,8 +8,11 @@ import path from 'path'
 import fs from 'fs'
 import bowerPath from './utilities/bowerPath'
 
-export const inputDir = path.resolve(path.join('.', 'assets', 'stylesheets'));
+const inputDir = path.resolve(path.join('.', 'assets', 'stylesheets'));
 const outputDir = path.resolve(path.join('.', '.tmp', 'stylesheets'));
+
+// Export our taskSrc so the master gulpfile knows what we want it to watch for changes:
+export const taskSrc =  path.join(inputDir, '**', '*.scss');
 
 const sassIncludePaths = [
 	path.resolve(path.join('.', 'node_modules'))
@@ -34,7 +37,7 @@ export default (gulp, plugins) => {
 	if(plugins.util.env.node_env === 'production' && !postCssPlugins.includes(cssnano)) {
 		postCssPlugins.push(cssnano);
 	}
-	return () => gulp.src(path.join(inputDir, '**', '*.scss'))
+	return () => gulp.src(taskSrc)
 	// Compile SASS files:
 	.pipe(plugins.sass({includePaths: sassIncludePaths}))
 	// Run PostCSS:

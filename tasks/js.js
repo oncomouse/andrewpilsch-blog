@@ -6,6 +6,9 @@ import bowerPath from './utilities/bowerPath'
 const inputDir = path.resolve(path.join('.', 'assets', 'javascripts'));
 const outputDir = path.resolve(path.join('.', '.tmp', 'javascripts'));
 
+// Export our taskSrc so the master gulpfile knows what we want it to watch for changes:
+export const taskSrc =  path.join(inputDir, '**', '*.js');
+
 // Set up Mincer:
 const mincerEnvironment = new Mincer.Environment();
 mincerEnvironment.appendPath(inputDir);
@@ -16,7 +19,7 @@ if(fs.existsSync(path.resolve(path.join('.','bower.json')))) {
 }
 
 export default (gulp, plugins) => {
-	return () => gulp.src(path.join(inputDir, '**', '*.js'))
+	return () => gulp.src(taskSrc)
 	// Run Mincer:
 	.pipe(plugins.mincer(mincerEnvironment))
 	// If in production, run Uglify:

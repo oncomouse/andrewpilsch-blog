@@ -2,8 +2,8 @@ import gulp from 'gulp'
 import gulpLoadPlugins from 'gulp-load-plugins'
 import path from 'path'
 
-import gulpjs from './tasks/js'
-import gulpsass from './tasks/sass'
+import gulpjs, {taskSrc as jsWatchTarget} from './tasks/js'
+import gulpsass, {taskSrc as sassWatchTarget} from './tasks/sass'
 
 // Load all the Gulp plugins in package.json:
 const plugins = gulpLoadPlugins();
@@ -12,7 +12,7 @@ const plugins = gulpLoadPlugins();
 const gulp_src = gulp.src;
 gulp.src = function() {
 	return gulp_src.apply(gulp, arguments)
-	.pipe(plugins.plumber(function(err) {
+	.pipe(plugins.plumber(function(error) {
 	    plugins.util.log(plugins.util.colors.red('Error (' + error.plugin + '): ' + error.message));
         // emit the end event, to properly end the task
         this.emit('end');
@@ -27,7 +27,7 @@ gulp.task('sass', gulpsass(gulp, plugins));
 gulp.task('default', ['js', 'sass'], () => {
 	// If not in production, load watchers:
 	if(plugins.util.env.node_env !== 'production') {
-		gulp.watch(path.resolve(path.join('.', 'assets', 'javascripts', '**', '*.js')), ['js']);
-		gulp.watch(path.resolve(path.join('.', 'assets', 'stylesheets', '**', '*.scss')), ['sass']);
+		gulp.watch(jsWatchTarget, ['js']);
+		gulp.watch(sassWatchTarget, ['sass']);
 	}
 });
