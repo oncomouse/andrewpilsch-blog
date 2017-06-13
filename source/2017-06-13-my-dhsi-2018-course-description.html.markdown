@@ -8,11 +8,11 @@ I am really excited to announce that [I am on the schedule to teach at DHSI](htt
 
 The class will be a fairly advanced dip into contemporary JavaScript full-stack development practices, mostly focused on building the front-end of in-browser applications. Anybody planning to take the class should have some experience programming and be somewhat familiar with the command line (we'll be using [Node.js](https://nodejs.org/) a lot!).
 
-I'm excited about the class because DH application building has been fairly server heavy, to-date, often relying on the [LAMP stack](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) or server intensive Java applications. JavaScript [isomorphic application design](https://www.lullabot.com/articles/what-is-an-isomorphic-application) offloads a lot of processing to the client (which is increasingly powerful; even your iPhone!) and can be hosted in more minimal, distributed environments (such as [Heroku](https://www.heroku.com/) and [Amazon EC2](https://aws.amazon.com/ec2/)).
+I'm excited about the class because DH application building has been fairly server-heavy, to-date, often relying on the [LAMP stack](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) or server-intensive Java applications. JavaScript [isomorphic application design](https://www.lullabot.com/articles/what-is-an-isomorphic-application) offloads a lot of processing to the client (which is increasingly powerful; even your iPhone!) and can be hosted in more minimal, distributed environments (such as [Heroku](https://www.heroku.com/) and [Amazon EC2](https://aws.amazon.com/ec2/)).
 
-Also, JavaScript is an awesome language that has a ton of everyday applications.
+Also, JavaScript is an awesome language that has a ton of applications.
 
-All of that is to say that I am *very* excited to share this course with the DH community and hope you'll consider taking it! 
+I am *very* excited to share this course with the DH community and hope you'll consider taking it! 
 
 The class will meet during the second week (June 11-15, 2018) of DHSI. If you are interested, please get in touch (either via email or [Twitter](https://twitter.com/oncomouse)).
 
