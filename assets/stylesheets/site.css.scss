@@ -207,6 +207,9 @@ body > footer {
 	article img {
 		max-width: $column-width;
 	}
+	.inline-footnote p {
+		font-size: 15px;
+	}
 }
 // Big Desktop Layout // --------------------------------------------------
 @include breakpoint($big) {
