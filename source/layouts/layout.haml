@@ -75,14 +75,26 @@
 		- # This is slow, but it doesn't matter. That's the beauty of static sites: we can do all sorts of horribly inefficient operations and it doesn't matter because the horribly inefficient operation is only performed once, at build time. Similarly, just because a site is static does not mean that we cannot do things such as dynamic asset loading at build time. The advantage is that we don't have to do this EVERY time we serve a page!
 		- $features = []
 		- $features.push :site
+		- # Check if we are rendering a single article:
 		- if (current_page.respond_to? "body")
-			- $html_body = Nokogiri::HTML(current_page.body)
-			- $features.push :syntax if $html_body.css("pre code").length > 0
-			- $features.push :modal if $html_body.css("img").length > 0
-			- $features.push :footnotes if $html_body.css("*[id^=fnref]").length > 0
-			- $features.push :emoji if (EmojiData.scan(current_page.body.to_s).length > 0 || EmojiData.scan(current_page.title.to_s).length > 0)
+			- $html_body = current_page.body
+			- $html_title = current_page.title
+		- # Or an index page, which define content_for :headlines
+		- elsif (content_for? :headlines)
+			- $html_body = yield_content(:headlines)
+			- $html_title = ''
 		- else
-			- # Load all features if index page (let God sort 'em out)
+			- $html_body = nil
+		
+		- # If we have an HTML block we can scan, load assets:
+		- if not $html_body.nil?
+			- nokogiri_body = Nokogiri::HTML($html_body)
+			- $features.push :syntax if nokogiri_body.css("pre code").length > 0
+			- $features.push :modal if nokogiri_body.css("img").length > 0
+			- $features.push :footnotes if nokogiri_body.css("*[id^=fnref]").length > 0
+			- $features.push :emoji if (EmojiData.scan($html_body.to_s).length > 0 || EmojiData.scan($html_title.to_s).length > 0)
+		- else
+			- # Load all features if we have no HTML to test
 			- $features.push(:emoji, :footnotes, :modal, :syntax)
 		= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Alegreya:700,900,700i#{($features.index :syntax) ? "|Source+Code+Pro:600" : ""}"
 		- # Load CSS files based on features (CSS files are all named $features.css, where $feature is the particular symbol for that feature)
