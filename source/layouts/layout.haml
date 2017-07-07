@@ -75,19 +75,16 @@
 		- # This is slow, but it doesn't matter. That's the beauty of static sites: we can do all sorts of horribly inefficient operations and it doesn't matter because the horribly inefficient operation is only performed once, at build time. Similarly, just because a site is static does not mean that we cannot do things such as dynamic asset loading at build time. The advantage is that we don't have to do this EVERY time we serve a page!
 		- $features = []
 		- $features.push :site
-		- # Check if we are rendering a single article:
-		- if (current_page.respond_to? "body")
+		- if (current_page.respond_to? "body") # Check if we are rendering a single article:
 			- $html_body = current_page.body
 			- $html_title = current_page.title
-		- # Or an index page, which define content_for :headlines
-		- elsif (content_for? :headlines)
+		- elsif (content_for? :headlines) # Or an index page, which define content_for :headlines
 			- $html_body = yield_content(:headlines)
 			- $html_title = ''
 		- else
 			- $html_body = nil
 		
-		- # If we have an HTML block we can scan, load assets:
-		- if not $html_body.nil?
+		- if not $html_body.nil? # If we have an HTML block we can scan, load assets:
 			- nokogiri_body = Nokogiri::HTML($html_body)
 			- $features.push :syntax if nokogiri_body.css("pre code").length > 0
 			- $features.push :modal if nokogiri_body.css("img").length > 0
