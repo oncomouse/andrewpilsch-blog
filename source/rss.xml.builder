@@ -18,7 +18,7 @@ xml.rss :version => "2.0",  'xmlns:atom' => "http://www.w3.org/2005/Atom" do
 				xml.link "https://andrew.pilsch.com" + article.url
 				xml.pubDate article.date.rfc822
 				xml.guid "https://andrew.pilsch.com" + article.url
-				xml.description article.body
+				xml.description "<p>" + Nokogiri::HTML(article.summary(350)).css("p").first.content.to_s + "</p>\n\n<p>" + link_to("Read More", "https://andrew.pilsch.com" + article.url) + "</p>"
 				#xml.content article.body, "type" => "html"
 			end
 		end
