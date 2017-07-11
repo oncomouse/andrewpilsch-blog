@@ -14,7 +14,7 @@ Also, JavaScript is an awesome language that has a ton of applications.
 
 I am *very* excited to share this course with the DH community and hope you'll consider taking it! 
 
-The class will meet during the second week (June 11-15, 2018) of DHSI. If you are interested, please get in touch (either via email or [Twitter](https://twitter.com/oncomouse)).
+The class will meet during the first week (June 4-8, 2018) of DHSI. If you are interested, please get in touch (either via email or [Twitter](https://twitter.com/oncomouse)).
 
 <hr style="width: 60%">
 
