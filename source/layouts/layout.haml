@@ -9,12 +9,12 @@
 
 		- page_title = "Blog Title"
 		- if (not data.blog.nil?) and data.blog.has_key? "title"
-			- page_title = data.blog.title 
+			- page_title = data.blog.title
 		- if(!current_page.data.nil? and current_page.data.has_key? 'title')
 			- page_title += " - " + current_page.data.title
 
 		%title= page_title
-		
+
 		- page_description = nil
 		-if current_page.data.has_key? "description"
 			- page_description = Haml::Filters::Markdown.render(current_page.data["description"])
@@ -25,7 +25,7 @@
 			%meta{ property: "description", content: "#{page_description}" }
 		%meta{ name: "author", content: ((not data.blog.nil?) and data.blog.has_key? "author") ? data.blog.author : "Blog Author" }
 		%link{ rel: "canonical", href: "#{config[:site_deploy_root]}#{current_page.url}" }
-		
+
 		/ Open Graph Stuff
 		%meta{ property: "og:locale", content: "en_US" }
 		%meta{ property: "og:url", content: "#{config[:site_deploy_root]}#{current_page.url}" }
@@ -43,17 +43,17 @@
 			- if nokogiri_img.length > 0
 				- page_image = image_path(nokogiri_img.first.attribute "src")
 		- page_image_file = nil
-		- if (page_image.to_s =~ /^http[s]{0,1}\:/).nil? 
+		- if (page_image.to_s =~ /^http[s]{0,1}\:/).nil?
 			- if build?
 				-page_image_file = Dir.pwd + "/source/" + page_image.gsub(Regexp.new("/{0,1}#{config[:http_prefix].gsub(/\//,"")}/{0,1}"),"")
 			- else
-				-page_image_file = Dir.pwd + "/source" + page_image 
-		- else 
+				-page_image_file = Dir.pwd + "/source" + page_image
+		- else
 			- page_image_file = page_image.to_s
 		%meta{ property: "og:image", content:  (page_image.to_s =~ /^http[s]{0,1}\:/).nil? ? "#{config[:site_deploy_root]}" + page_image : page_image }
 		%meta{ property: "og:image:width", content: FastImage.size(page_image_file)[0]}
 		%meta{ property: "og:image:height", content: FastImage.size(page_image_file)[1]}
-	
+
 		- if not (page_image.to_s =~ /me.png$/).nil?
 			-#%meta{ property: "og:image:secure_url", content: "https://s3.amazonaws.com/pilschwebimage/me.png"}
 		%meta{ property: "og:image:type", content: "image/#{FastImage.type(page_image_file).to_s}"}
@@ -64,10 +64,10 @@
 		%meta{ name: "twitter:description", :content=> page_description }
 		%meta{ name: "twitter:title", content: page_title.gsub(/[_*]/,"") }
 		%meta{ name: "twitter:image:src", content: (page_image.to_s =~ /^http[s]{0,1}\:/).nil? ? "#{config[:site_deploy_root]}" + page_image : page_image }
-		
+
 		- # Attach RSS feed:
 		= feed_tag :rss, "#{config[:http_prefix]}rss.xml", title: "RSS Feed"
-		
+
 		- # Feature detection!
 		- #
 		- # This is the part of this site of which I am the most proud. If possible (ie. the site is not an index page), we load Nokogiri and parse the HTML body to detect whether we need to load a particular JavaScript/CSS asset on a particular article.
@@ -83,7 +83,7 @@
 			- $html_title = ''
 		- else
 			- $html_body = nil
-		
+
 		- if not $html_body.nil? # If we have an HTML block we can scan, load assets:
 			- nokogiri_body = Nokogiri::HTML($html_body)
 			- $features.push :syntax if nokogiri_body.css("pre code").length > 0
@@ -93,7 +93,9 @@
 		- else
 			- # Load all features if we have no HTML to test
 			- $features.push(:emoji, :footnotes, :modal, :syntax)
-		= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Alegreya:700,900,700i#{($features.index :syntax) ? "|Source+Code+Pro:600" : ""}"
+		- if $features.index :syntax
+			= stylesheet_link_tag "https://cdn.rawgit.com/tonsky/FiraCode/e68b88dc/distr/fira_code.css"
+		= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Alegreya:700,900,700i"
 		- # Load CSS files based on features (CSS files are all named $features.css, where $feature is the particular symbol for that feature)
 		- if $features.index(:site)
 			- # Make sure that we load site.css first

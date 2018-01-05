@@ -21,7 +21,7 @@ $base-font-color: $dark-gray;
 $background-color: $base3;
 $sans-serif: 'Lato', serif;
 $serif: 'Alegreya', serif;
-$mono: 'Source Code Pro', monospace;
+$mono: 'Fira Code', monospace;
 
 $base-font-weight: 400;
 $bold-font-weight: 700;
@@ -61,7 +61,7 @@ $footnote-pixel-width: (($footnote-width / 1rem) * $base-font-size);
 $max-column-width-for-sidebar: $footnote-pixel-width + $column-width + 15px;
 
 $code-font-family: $mono;
-$code-font-weight: 600;
+$code-font-weight: 400;
 $code-font-size: 1rem;
 
 // Media queries:
