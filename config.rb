@@ -4,7 +4,7 @@
 
 set :markdown_engine, :kramdown
 set :markdown, :fenced_code_blocks => true,
-							 :autolink => true, 
+							 :autolink => true,
 							 :smartypants => true,
 							 :footnotes => true,
 							 :superscript => true
@@ -16,6 +16,7 @@ root = Dir.pwd
 set :haml, { :format => :html5, preserve: ['textarea', 'pre', 'code']}
 Haml::TempleEngine.disable_option_validator!
 
+activate :livereload
 activate :external_pipeline,
 	name: :gulp,
 	command: "gulp#{build? ? " --node_env=production" : ""}",

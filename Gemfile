@@ -15,11 +15,12 @@ gem 'wdm', '~> 0.1.0', platforms: [:mswin, :mingw]
 gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 
 # Middleman Gems
-gem "middleman", "~> 4.1"
+gem "middleman", "~> 4.2"
 gem "middleman-blog"
 gem "middleman-syntax"
 gem 'middleman-deploy', github: 'middleman-contrib/middleman-deploy', branch: 'master'
 gem "middleman-minify-html"
+gem "middleman-livereload"
 gem "emoji_data", github: 'oncomouse/emoji_data.rb', branch: 'master'
 
 gem "kramdown"
