@@ -1,0 +1,44 @@
+---
+title: "Dark Transhumanism"
+date: 2017-05-31 15:24 UTC
+tags:
+published: true
+---
+
+I spent a lovely week in Bloomington at the [RSA Summer Institute](https://www.indiana.edu/~iucweb/rsa17/) learning about digital rhetoric and posthuman invention. One thing that became a refrain for the week was talking about [my forthcoming book](https://www.amazon.com/Transhumanism-Evolutionary-Futurism-Technologies-Utopia/dp/1517901022) on transhumanism and having to explain how, in the last year, most of the ideas I single out in that text as having a utopian potential have been "weaponized."
+
+As an example, my chapter on memes, which considers the debate inaugurated by Natasha Vita-More's ["Transhumanist Arts Statement"](https://www.digitalmanifesto.net/manifestos/35/) in the context of [The New Aesthetic](http://jamesbridle.com/works/the-new-aesthetic) and LOLCat image macros, feels dated given the use of memes by various forces of white supremacy in the last year or so. In that chapter, I argue that memes are an attempt to map the collective unconscious and serve as a means of tracing the new territory of a global brain. I connect these images to Arthur C. Clarke's ["Dial 'F' for Frankenstein"](http://www.davidpaulkirkpatrick.com/2012/08/15/dial-f-for-frankenstein-the-birth-of-the-world-wide-web/) and Karl Marx's idea of a general intellect.
+
+I stand by my thesis. I think memes are an attempt to map collective brain, but that looks increasingly dark at present. Megan Amram did some of this work on Twitter this morning, referencing the spat of memes about "[covfefe](https://pbs.twimg.com/media/DBKbwtkVoAARLPz.jpg)":
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">literally every covfefe joke is funny we are reaching the singularity and it feels amazing</p>&mdash; Megan Amram (@meganamram) <a href="https://twitter.com/meganamram/status/869790135818240001">May 31, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Memes still seem like a symptom of a growing global intelligence, but is that a good thing, anymore?
+
+I was also explaining the weaponization of the *topoi* of my book by discussing Peter Thiel's [predilection for the blood of young people](http://www.vanityfair.com/news/2016/08/peter-thiel-wants-to-inject-himself-with-young-peoples-blood). Apparently, regular blood transfusions from the youth is a [life-extension trend amongst the ultra rich](https://tonic.vice.com/en_us/article/are-rich-people-already-infusing-themselves-with-young-blood). As InternetHippo pointed out on Twitter,
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The best thing about our economic system is how effortlessly it transitioned into literal vampirism <a href="https://t.co/jtL1GkWYvs">pic.twitter.com/jtL1GkWYvs</a></p>&mdash; Hippo (@InternetHippo) <a href="https://twitter.com/InternetHippo/status/865949367521423361">May 20, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+It is also worth noting that blood transfusions were a fad amongst Communist Party elite after the Russian Revolution, as discussed in McKenzie Wark's [*Molecular Red*](https://www.amazon.com/Molecular-Red-Anthropocene-McKenzie-Wark/dp/1784784087).
+
+Relating all of this to my idea of a dark transhumanism, [this piece by Shuja Haider](https://www.viewpointmag.com/2017/03/28/the-darkness-at-the-end-of-the-tunnel-artificial-intelligence-and-neoreaction/) connected neoreaction---the philosophy of dark enlightenment that is endorsed by terminal accelerationist Nick Land---to current thinking about the Singularity and artificial intelligence. Haider specifically outlines [Roko's Basilisk](http://www.slate.com/articles/technology/bitwise/2014/07/roko_s_basilisk_the_most_terrifying_thought_experiment_of_all_time.html), a weaponized meme that argues that superintelligent AI are manipulating history to create themselves sooner. If you help these AI, you will be resurrected in a digital heaven; if not, you will be resurrected in a digital hell. Now that you know about the imperative, you have to help. (Sorry about that.)
+
+My book argues that transhumanism is infected with a strain of neoliberalism at odds with its liberatory rhetoric (especially the rhetoric of first generation transhumanists such as FM-2030 and Max More), but Roko's Basilisk, which imagines future superintelligent AI as actively in competition with present humans, represents a particularly sharp application of neoliberal ideas to transhumanism, especially regarding the belief in individual competition as the best form of social contract. 
+
+All of this got me thinking about an inversion of my book. I imagine a book, called *Dark Transhumanism*, that is the evil twin of *Transhumanism*. Thinking more about this, I realized it could have essentially the same chapter structure as the present book, with each chapter slightly shifting focus to provide a genealogy of the present rise of dark transhumanism.
+
+In the first chapter, instead of talking about Mina Loy and P.D. Ouspensky's rhetoric of an inner or spiritual transhumanism, the chapter would look at F.T. Marinetti, the body as machine, and, specifically, Marinetti's work on fascism. The chapter would also discuss the recent interest in 20th century avant garde in speculative fiction, including Bruce Sterling's *Pirate Utopia* and China Mieville's *Last Days of New Paris* and *October*. There's a sense of a new utopian moment here, the idea that history is cracking open again, but there's also a normalization of fascism, especially in Sterling's repellent alternate history of [the Free State of Fiume](https://en.wikipedia.org/wiki/Free_State_of_Fiume).
+
+Instead of discussing the superman boom in 1930s American science fiction, the second chapter would discuss the pre-history of dark transhumanism in J.G. Ballard, Charles Stross, Cory Doctorow, Rudy Rucker, and Vernor Vinge. I mention it in passing in my book, but I am convinced that Stross's *Accelerando* and *Singularity Sky* are rewritings of the history of the Russian Revolution using the Singularity and transhumanism as stand-ins for Marxism. In Stross especially, the Singularity goes bad for the same reason that the Revolution went bad: humanity's inability to accept freedom. I would also discuss Ballard's early short fiction as a critique of this limit, and see Rucker's *Postsingular* and Vinge's *Rainbows End* as also being test cases in the limit of human adaptation. I'm also thinking there's a reading of early fantasy literature and fascism here.
+
+One of the chapters that fell out of my book in revision from my dissertation was a chapter titled "The Three Stigmata of Raymond Kurzweil," which looked at the idea of reality theft in Kurzweil. As this third chapter was rewritten, it came to connect [David Pearce's *Hedonistic Imperative*](https://www.hedweb.com/) with Pierre Teilhard de Chardin's *The Human Phenomenon* to discuss the rhetoric of suffering and the rhetoric of pleasure in transhuman philosophy. In the dark inversion of this book, I would look more directly at the neoliberal imperative in transhumanism, Roko's Basilisk, and definitely the blood transfusion thing, to think more about the rhetorical valences of dark transhumanism. I could see all of this working within the Kurzweil framework from the dissertation.
+
+The fourth chapter of the book is on art and memes, as I mentioned above. The dark version would focus on the weaponization of memes, as I mentioned above. I think Nick Land's work aestheticizing finance capital in the 1990s at the CCRU would also fit in here.
+
+The conclusion, which deals with [Alex Williams and Nick Srnicek's accelerationist manifesto](http://criticallegalthinking.com/2013/05/14/accelerate-manifesto-for-an-accelerationist-politics/), the [Xenofeminist manifesto](http://www.laboriacuboniks.net/), and Socrates, would focus more on Land, neoreactionism, and the idea of imagining a dark enlightenment. I think the surge of interest in H.P. Lovecraft in continental philosophy would also factor in here.
+
+The weird thing about this project is how easy it is to imagine the dark inversion of my book. I'm not sure I could write it, though, because I'm not sure of the stakes. While my transhumanism book is not doing advocacy work, it is advocating for taking transhuman ideas seriously within social thought. I'm not sure what the operations would be for the dark book, though. As I said in my invention workshop at RSA last weekend, I am still interested in figuring out how ideas spread and mutate, and dark transhumanism is certainly a mutation in our rhetoric of the future.
+
+The question I'll leave you with is this: is it a normal first book reaction to imagine the evil version of your book? If so, what is your *Dark Transhumanism*?

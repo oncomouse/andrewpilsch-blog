@@ -1,0 +1,10 @@
+---
+layout: home
+comments: false
+---
+{% for post in paginator.posts %}
+	{% include post-entry.html %}
+{% endfor %}
+
+{% include paginator.html %}
+
