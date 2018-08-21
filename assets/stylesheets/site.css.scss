@@ -76,6 +76,11 @@ article img {
 	border: 0;
 	display: block;
 }
+blockquote {
+	margin-left: 25px;
+	border-left: 2px solid $orange;
+	padding-left: 15px;
+}
 article a {
 	@include fancyUnderline($action-color, $background-color, darken($action-color, 15%), $action-color);
 }
@@ -218,9 +223,6 @@ body > footer {
 	#colophon {
 		width: $column-width;
 		margin: auto;
-	}
-	blockquote {
-		margin-left: 40px;
 	}
 	article.small {
 		width: $column-width * .9;
