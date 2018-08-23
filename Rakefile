@@ -12,15 +12,18 @@ namespace :build do
 	end
 
 	task :compress do
-		$stdout.print "Compressing site.js..."; $stdout.flush
-    system "uglifyjs -o _site/assets/js/main.js _site/assets/js/main.js"
-    system "uglifyjs -o _site/assets/js/slimmenu.js _site/assets/js/slimmenu.js"
-		$stdout.puts "done"
+		# $stdout.print "Compressing site.js..."; $stdout.flush
+    # system "uglifyjs -o _site/assets/js/main.js _site/assets/js/main.js"
+    # system "uglifyjs -o _site/assets/js/slimmenu.js _site/assets/js/slimmenu.js"
+		# $stdout.puts "done"
 		$stdout.print "Compressing *.html..."; $stdout.flush
 		system "html-minifier --input-dir _site --output-dir _site --file-ext html --collapse-whitespace --remove-comments --remove-attribute-quotes --remove-empty-attributes --use-short-doctype --minify-js --minify-css"
 		$stdout.puts "done"
+    $stdout.print "Building Custom Tachyons.css..."; $stdout.flush
+    system "npx extract-tachyons `find _site -name \"*.html\"` --compress --output _site/assets/css/tachyons-custom.min.css"
+    $stdout.puts "done"
     $stdout.print "Embedding Assets..."; $stdout.flush
-    system "node _scripts/embed-js.js _site/*.html _site/**/*.html"
+    system "node _scripts/embed-js.js `find _site -name \"*.html\"`"
     $stdout.puts "done"
   end
 	task :all => [:jekyll, :compress]

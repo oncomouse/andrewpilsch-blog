@@ -1,11 +1,14 @@
 {
-  "name": "ap-jekyll",
+  "name": "jekyll-blog",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
-    "jsdom": "^11.12.0",
+    "@oncomouse/extract-tachyons": "^1.0.2",
+    "jsdom": "^12.0.0",
     "minimist": "^1.2.0"
+  },
+  "dependencies": {
+    "tachyons-sass": "^4.9.3"
   }
 }

@@ -1,10 +1,9 @@
 ---
-layout: home
-comments: false
+layout: default
+container-classes: measure-wide center mb6
 ---
 {% for post in paginator.posts %}
-	{% include post-entry.html %}
+  {% include post-entry.html %}
 {% endfor %}
 
 {% include paginator.html %}
-

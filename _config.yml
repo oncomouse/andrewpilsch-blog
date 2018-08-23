@@ -1,61 +1,51 @@
-# Site Settings
-encoding                 : "utf-8"
-locale                   : "en"
-title                    : "Andrew Pilsch Blog"
-title_separator          : "-"
-# description              : "Somewhere Between an Article and an RT"
-favicon                  : "/assets/images/bird.png"
-# avatar                   : "/assets/images/bird.png"
-url                      : "https://andrew.pilsch.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "/blog" # the subpath of your site, e.g. "/blog" leave blank if no subpath
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# Site Author
-author:
-  name                   : "Andrew" # appears in the footer and atom feed
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Andrew Pilsch Blog
+title_separator: —
+email: "andrew@pilsch.com"
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "/blog" # the subpath of your site, e.g. /blog
+url: "https://andrew.pilsch.com" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: oncomouse
+github_username:  oncomouse
 
-comments                 : true # set it to false to disable comments
-disqus:
-  shortname              : # sparrow-theme # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
-
-atom_feed:
-  path                   : # blank (default) uses feed.xml
-
-og_image                 : "/assets/images/bird.png" # Open Graph/Twitter default site image, optional for seo and social sharing
-
-# Social sharing
-twitter:
-  username               : oncomouse # optional, for social sharing
-
-# Analytics
-analytics:
-  google:
-    tracking_id          : # add your google tracking id here
-
-# Reading Files
-include:
-  - _pages
-# Files excluded from Jekyll builds
-exclude:
-- .tern-port
-- Rakefile
-- node_modules
-- package.json
-- yarn.lock
-- README.md
-- LICENSE
-- Gemfile
-- Gemfile.lock
-
-
-# Conversion
+# Build settings
 markdown: kramdown
+theme: minima
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "post"
 
 # Markdown Processing
+# pandoc:
+#   extensions:
+#     - section-divs
+#     - from: 'markdown+smart'
+#     - filter: 'pandoc-sidenote'
 kramdown:
   input: GFM
   hard_wrap: false
@@ -66,20 +56,6 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
-
-# Outputting
-permalink: /:title
-paginate: 20 # amount of posts to show
-paginate_path: "/page:num/"
-timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
-# Plugins
 plugins:
   - jekyll-paginate
   - jekyll-feed
@@ -89,28 +65,24 @@ whitelist:
   - jekyll-paginate
   - jekyll-feed
 
+sass:
+  sass_dir: _sass
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
-# Front matter defaults
-defaults:
-  # _pages
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: page
-      comments: false
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
-      comments: true
-      share: true
-  # _poetry
-  - scope:
-      path: ""
-      type: poetry
-    values:
-      layout: post
-      share: false
+# permalink: /:title
+paginate: 20 # amount of posts to show
+paginate_path: "/page:num/"
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+exclude:
+  - _scripts
+  - .tern-port
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

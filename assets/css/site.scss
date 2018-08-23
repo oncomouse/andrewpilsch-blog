@@ -1,0 +1,92 @@
+---
+---
+@import "colors";
+// @import "skins";
+
+html {
+  font-size: 20/16 * 100%;
+}
+
+$white: #fff;
+$black: #111;
+
+$background-color: $white;
+$foreground-color: $black;
+$theme-color: $teal;
+$theme-secondary-color: darken($teal, 15%);
+
+// New Tachyons
+.bg-teal {
+  background-color: $teal;
+}
+// Overrides
+.sans-serif {
+  font-family: "Alegreya Sans", sans-serif;
+}
+.serif {
+  font-family: "Alegreya", serif;
+}
+// Re-definitions:
+.f6 {
+    font-size: .875rem;
+}
+.link {
+  text-decoration: none;
+  transition: color .15s ease-in;
+}
+.link:link,
+.link:visited {
+  transition: color .15s ease-in;
+}
+.link:hover   {
+  transition: color .15s ease-in;
+}
+.link:active  {
+  transition: color .15s ease-in;
+}
+.link:focus   {
+  transition: color .15s ease-in;
+}
+
+// Compositions:
+a {
+  @extend .link;
+}
+.highlighter-rouge {
+  @extend .f6;
+}
+// New Elements:
+blockquote {
+  color: transparentize($foreground-color, 0.1);
+  border-left: .25rem solid transparentize($theme-color, 0.75);
+  margin-left: 1rem;
+  margin-right: 0;
+  padding-left: 1rem;
+}
+a {
+  color: $foreground-color;
+}
+a:hover {
+  color: $theme-color;
+}
+a,
+a:hover {
+  text-shadow: 0.03em 0 #FFF, -0.03em 0 $background-color, 0 0.03em $background-color, 0 -0.03em $background-color, 0.06em 0 $background-color, -0.06em 0 $background-color, 0.09em 0 $background-color, -0.09em 0 $background-color, 0.12em 0 $background-color, -0.12em 0 $background-color, 0.15em 0 $background-color, -0.15em 0 $background-color;
+  background-image: linear-gradient($background-color,$background-color),linear-gradient($background-color,$background-color),linear-gradient($theme-color,$theme-color);
+  background-size: .05em 1px,.05em 1px,1px 1px;
+  background-repeat: no-repeat,no-repeat,repeat-x;
+  background-position-y: 87%,87%,87%;
+}
+.paginator a,
+.paginator a:hover {
+  text-shadow: none;
+  background-image: none;
+}
+.word:last-child {
+  color: $theme-secondary-color;
+}
+$hanging-indent: 2rem;
+.references p {
+  padding-left: $hanging-indent;
+  text-indent: -1 * $hanging-indent;
+}

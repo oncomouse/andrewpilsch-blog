@@ -1,38 +1,19 @@
 ---
 layout: default
+container-classes: measure-wide center mb6
 ---
+<article class="post">
+  <header class="fn pr4-ns">
+    {% if page.title %}<h1 class="f2 lh-title fw9 mb3 mt0 pt3 serif" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
 
-{% include breadcrumbs.html %}
-
-<div id="main" role="main">
-  <article class="post" itemscope itemtype="http://schema.org/CreativeWork">
-    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
-    {% if page.modified %}<meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}">{% endif %}
-
-    <div class="post__inner-wrap">
-      <header>
-        {% if page.title %}<h1 class="post__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
-        
-        {% if page.date %}
-        <p class="post__meta"> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }} </time></p>
-        {% endif %}
-      </header>
-
-      <section class="post__content" itemprop="text">
-        {{ content }}
-
-        {% comment %}{% if page.share %}{% include social-share.html %}{% endif %}{% endcomment %}
-
-      </section>
-
-    </div>
-
-    {% if site.comments and page.comments != false %}
-      {% include comments.html %}
+    {% if page.date %}
+    <time class="f6 ttu tracked mid-gray" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }} </time>
     {% endif %}
+  </header>
+  <div class="bt b--black-60 w-40 h2 mr2-ns mt1"></div>
+  <div class="lh-copy f4">
+    {{ content }}
 
-
-  </article>
-</div>
+    <p class="ml3 i f5"><a class="black" href="{{ "/" | absolute_url }}">Back Home</a></p>
+  </div>
+</article>
