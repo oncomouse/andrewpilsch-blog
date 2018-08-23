@@ -69,6 +69,7 @@ sass:
   sass_dir: _sass
   style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
+permalink: :categories/:year/:month/:day/:title/
 # permalink: /:title
 paginate: 20 # amount of posts to show
 paginate_path: "/page:num/"
