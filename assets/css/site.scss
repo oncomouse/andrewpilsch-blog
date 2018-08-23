@@ -3,21 +3,44 @@
 @import "colors";
 // @import "skins";
 
-html {
-  font-size: 20/16 * 100%;
-}
 
 $white: #fff;
 $black: #111;
+$custom-gray: lighten(#e0e0e0, 5%);
 
 $background-color: $white;
 $foreground-color: $black;
 $theme-color: $teal;
 $theme-secondary-color: darken($teal, 15%);
 
+@mixin fancyLinks($bg, $fg) {
+  text-shadow: 0.03em 0 $bg, -0.03em 0 $bg, 0 0.03em $bg, 0 -0.03em $bg, 0.06em 0 $bg, -0.06em 0 $bg, 0.09em 0 $bg, -0.09em 0 $bg, 0.12em 0 $bg, -0.12em 0 $bg, 0.15em 0 $bg, -0.15em 0 $bg;
+  background-image: linear-gradient($bg,$bg),linear-gradient($bg,$bg),linear-gradient($fg,$fg);
+  background-size: .05em 1px,.05em 1px,1px 1px;
+  background-repeat: no-repeat,no-repeat,repeat-x;
+  background-position-y: 87%,87%,87%;
+
+}
+// Reset
+html {
+  font-size: 20/16 * 100%;
+}
+
 // New Tachyons
 .bg-teal {
   background-color: $teal;
+}
+.b--teal {
+  border-color: $teal;
+}
+.bg-custom-gray {
+  background-color: $custom-gray;
+}
+.bg-white {
+  background-color: $white;
+}
+.black {
+  color: $black;
 }
 // Overrides
 .sans-serif {
@@ -71,11 +94,7 @@ a:hover {
 }
 a,
 a:hover {
-  text-shadow: 0.03em 0 #FFF, -0.03em 0 $background-color, 0 0.03em $background-color, 0 -0.03em $background-color, 0.06em 0 $background-color, -0.06em 0 $background-color, 0.09em 0 $background-color, -0.09em 0 $background-color, 0.12em 0 $background-color, -0.12em 0 $background-color, 0.15em 0 $background-color, -0.15em 0 $background-color;
-  background-image: linear-gradient($background-color,$background-color),linear-gradient($background-color,$background-color),linear-gradient($theme-color,$theme-color);
-  background-size: .05em 1px,.05em 1px,1px 1px;
-  background-repeat: no-repeat,no-repeat,repeat-x;
-  background-position-y: 87%,87%,87%;
+  @include fancyLinks($background-color, $theme-color);
 }
 .paginator a,
 .paginator a:hover {
@@ -89,4 +108,16 @@ $hanging-indent: 2rem;
 .references p {
   padding-left: $hanging-indent;
   text-indent: -1 * $hanging-indent;
+}
+
+footer
+,.footer {
+  min-height: 8rem;
+}
+footer a,
+footer a:hover,
+.footer a,
+.footer a:hover,
+{
+  @include fancyLinks($custom-gray, $theme-color);
 }

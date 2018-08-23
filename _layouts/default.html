@@ -17,6 +17,10 @@ container-classes: measure center
 	<main class="{{ page.container-classes | default: layout.container-classes }}">
 		{{ content }}
 	</main>
-	<footer></footer>
+  <footer class="b--dotted b--teal bt bb-0 bl-0 br-0 bg-custom-gray pb4">
+    <div class="measure lh-copy f5 center">
+      {% capture src %}{% include colophon.md %}{% endcapture %}{{src | markdownify }}
+    </div>
+  </footer>
 </body>
 </html>
