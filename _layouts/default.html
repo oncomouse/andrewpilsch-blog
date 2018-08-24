@@ -9,8 +9,8 @@ container-classes: measure center
 	{% include css.html %}
 </head>
 <body class="sans-serif bg-white black mt4 {{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
-	<header class="measure-wide center serif">
-		<h1 class="f1 fw9">{% assign words=site.title | split: ' ' %}{% for word in words %}
+	<header class="measure-wide center">
+		<h1 class="f1 fw9 serif">{% assign words=site.title | split: ' ' %}{% for word in words %}
 			<span class="word">{{ word }}</span>
 		{% endfor %}</h1>
 	</header>

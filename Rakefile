@@ -1,5 +1,5 @@
 task :serve do
-  system "bundle exec jekyll serve"
+  system "bundle exec jekyll serve --unpublished"
 end
 
 task :deploy do
@@ -22,9 +22,12 @@ namespace :build do
     $stdout.print "Building Custom Tachyons.css..."; $stdout.flush
     system "npx extract-tachyons `find _site -name \"*.html\"` --compress --output _site/assets/css/tachyons-custom.min.css"
     $stdout.puts "done"
-    $stdout.print "Embedding Assets..."; $stdout.flush
-    system "node _scripts/embed-js.js `find _site -name \"*.html\"`"
-    $stdout.puts "done"
+		$stdout.print "Customizing Assets..."; $stdout.flush
+		system "node _scripts/customize-assets.js `find _site -name \"*.html\"`"
+		$stdout.puts "done"
+		$stdout.print "Packing Assets..."; $stdout.flush
+		system "node _scripts/embed-js.js `find _site -name \"*.html\"`"
+		$stdout.puts "done"
   end
 	task :all => [:jekyll, :compress]
 end

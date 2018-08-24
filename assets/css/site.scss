@@ -25,6 +25,14 @@ $theme-secondary-color: darken($teal, 15%);
 html {
   font-size: 20/16 * 100%;
 }
+::-moz-selection {
+  text-shadow: none;
+  background: transparentize($theme-color, 0.8);
+}
+::selection {
+  text-shadow: none;
+  background: transparentize($theme-color, 0.8);
+}
 
 // New Tachyons
 .bg-teal {
@@ -75,7 +83,8 @@ html {
 a {
   @extend .link;
 }
-.highlighter-rouge {
+code,
+.code {
   @extend .f6;
 }
 // New Elements:

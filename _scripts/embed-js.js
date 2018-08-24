@@ -18,6 +18,7 @@ const processInclude = (el, type, files) => {
   if (src.indexOf('rawgit.com') >= 0) return false;
   if (src.indexOf('googleapis.com') >= 0) return false;
   if (src.indexOf('twitter.com') >= 0) return false;
+  if (src.indexOf('syntax.css') >=0) return false;
   if (!files.has(src)) {
     const fileSrc = fs.readFileSync(path.join(...src.replace(/^http[s]{0,1}\:\/\/[^/]+\/blog\//, './_site/').split('/'))).toString();
     files.addFile(src, fileSrc);

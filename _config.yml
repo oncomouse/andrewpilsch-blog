@@ -79,6 +79,7 @@ paginate_path: "/page:num/"
 # to override the default setting.
 exclude:
   - _scripts
+  - .editorconfig
   - .tern-port
   - Gemfile
   - Gemfile.lock
