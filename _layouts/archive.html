@@ -1,8 +1,8 @@
 ---
 layout: default
-container-classes: measure-wide center mb6 mt4
+container-classes: measure-wide center mb6 mt5
 ---
-<h1 class="serif fw9 mt0 mb2 tc">Archive of posts from {{ page.date | date: "%Y" }}</h1>
+<h1 class="mt0 mb4 tc">Archive of posts from {{ page.date | date: "%Y" }}</h1>
 {% for post in page.posts %}
 	{% include post-entry.html %}
 {% endfor %}
