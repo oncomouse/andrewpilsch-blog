@@ -96,7 +96,8 @@ blockquote {
   padding-left: 1rem;
 }
 a {
-  color: $foreground-color;
+  color: inherit;
+  // color: $foreground-color;
 }
 a:hover {
   color: $theme-color;

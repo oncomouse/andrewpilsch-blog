@@ -8,6 +8,11 @@
     {% endif %}
   </h1>
 
+	{% if page.date %}
+		<p class="ml2 mid-gray">{{ post.excerpt | strip_html }}</p>
+		<p class="i ml2 mid-gray"><a href="{{ post.url | absolute_url }}">Read More</a></p>
+	{% endif %}
+
   {% if post.date %}
     <time class="db mt2 mb0 f6 ttu tracked mid-gray" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }} </time>
   {% endif %}
