@@ -59,7 +59,6 @@ kramdown:
 # plugins:
 #   - jekyll-paginate
 #   - jekyll-feed
-
 # mimic GitHub Pages with --safe
 # whitelist:
 #   - jekyll-paginate
@@ -73,6 +72,14 @@ permalink: :categories/:year/:month/:day/:title/
 # permalink: /:title
 paginate: 10 # amount of posts to show
 paginate_path: "/page:num/"
+lang: en-US
+
+jekyll-archives:
+  enabled:
+  - year
+  - month
+  - day
+  layout: archive
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
