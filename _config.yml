@@ -56,14 +56,14 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-plugins:
-  - jekyll-paginate
-  - jekyll-feed
+# plugins:
+#   - jekyll-paginate
+#   - jekyll-feed
 
 # mimic GitHub Pages with --safe
-whitelist:
-  - jekyll-paginate
-  - jekyll-feed
+# whitelist:
+#   - jekyll-paginate
+#   - jekyll-feed
 
 sass:
   sass_dir: _sass
@@ -71,7 +71,7 @@ sass:
 
 permalink: :categories/:year/:month/:day/:title/
 # permalink: /:title
-paginate: 20 # amount of posts to show
+paginate: 10 # amount of posts to show
 paginate_path: "/page:num/"
 
 # Exclude from processing.

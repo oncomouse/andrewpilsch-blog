@@ -1,6 +1,6 @@
-<article class="mb4" itemscope itemtype="http://schema.org/CreativeWork">
+<article class="mb5" itemscope itemtype="http://schema.org/CreativeWork">
 
-  <h1 class="mv0 f2 serif fw7" itemprop="headline">
+  <h1 class="mv0 f2 serif fw9" itemprop="headline">
     {% if post.link %}
       <a href="{{ post.link }}">{{ post.title | markdownify | replace: "<p>", "" | replace: "</p>", "" }}</a> <a href="{{ post.url | absolute_url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
     {% else %}
