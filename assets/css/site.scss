@@ -33,6 +33,11 @@ html {
   text-shadow: none;
   background: transparentize($theme-color, 0.8);
 }
+hr {
+  height: 1px;
+  background: rgba(0,0,0,.6);
+  border: 0;
+}
 
 // New Tachyons
 .bg-teal {
