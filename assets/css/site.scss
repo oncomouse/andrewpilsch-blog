@@ -125,6 +125,15 @@ $hanging-indent: 2rem;
   text-indent: -1 * $hanging-indent;
 }
 
+div.highlight {
+  overflow: auto;
+}
+
+pre.highlight {
+  margin: 0;
+  padding: 1rem;
+}
+
 footer
 ,.footer {
   min-height: 8rem;
