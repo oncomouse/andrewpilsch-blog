@@ -84,7 +84,7 @@ Here we are grouping names by first letter. You could add `"#j-name"` to the arr
 
 Take a look at Kate Compton's [Tracery tutorial](http://www.crystalcodepalace.com/traceryTut.html) for some even more advanced features, including how to modify text (capitalize, pluralize, etc.) and how to save values and branch your grammar based on those saved values.
 
-Also, Compton has a groovy [Tracery Editor](http://tracery.io/editor/), so you can start making grammars immediately! The key thing is that [Tracery](http://tracery.io/) is amazingly powerful but with a simple and easy to master syntax.
+Also, Compton has a groovy [Tracery Editor](http://oncomouse.github.io/tracery-editor/), so you can start making grammars immediately! The key thing is that [Tracery](http://tracery.io/) is amazingly powerful but with a simple and easy to master syntax.
 
 ## Making a Bot with Tracery
 
