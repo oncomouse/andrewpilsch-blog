@@ -6,7 +6,7 @@
   "devDependencies": {
     "@oncomouse/extract-tachyons": "^1.0.2",
     "jsdom": "^12.0.0",
-    "minimist": "^1.2.2"
+    "minimist": "^1.2.3"
   },
   "dependencies": {
     "tachyons-sass": "^4.9.3"
